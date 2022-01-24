@@ -1,0 +1,93 @@
+$header-height: 512px // 16*32
+.card
+    height: auto
+    margin-bottom: 5em
+    color: var(--color-grey-darker)
+    header, a
+        width: 100%
+    header
+        height: $header-height
+        border-radius: 0.3em
+        margin: 1.2em 0
+        align-items: center
+        justify-content: flex-end
+        flex-direction: column
+        display: flex
+        word-spacing: 0.2em
+        .right
+            margin-left: 10em
+        img
+            height: calc($header-height * 0.9) !important
+            min-height: calc($header-height * 0.9) !important
+    label
+        font-family: var(--font-serif) 
+        font-size:1.3em 
+        font-style:  italic
+        font-weight: 600
+        letter-spacing: 0.02em
+        margin: 0.8em 0
+        -webkit-font-smoothing: antialiased
+        color: var(--color-grey-darker)
+        word-spacing: 0.2em
+
+    label:before 
+            position: relative
+            content: "  "
+            display: inline-flex
+            width: 2em
+            height: 0.05em
+            margin-right: 1.2em
+            bottom: 0.2em
+            background-color: var(--color-grey)
+    h3,p
+        font-family: var(--font-kabel) 
+    h3 
+        font-size:  1.2em
+        font-weight: 900
+        -webkit-font-smoothing: auto
+        letter-spacing: 0.01em
+    a
+        color: var(--color-dark)
+        text-decoration: underline
+    p
+        font-size:  1.5em
+        font-weight:400
+        letter-spacing: 0.01em
+        // -webkit-font-smoothing: antialiased
+        -webkit-font-smoothing: auto
+
+    
+
+// exception    
+.card:nth-child(1) //avec
+    img
+        width: calc($header-height * 1.2) !important
+        max-width: calc($header-height * 1.4) !important
+        min-height: calc($header-height) !important
+        object-fit: contain
+.card:nth-child(2) //natura
+    img
+        // max-height: calc($header-height * 0.5)  !important
+        width: calc($header-height * 1.5) !important
+        max-width: calc($header-height * 2) !important
+        min-height: calc($header-height) !important
+        object-fit: contain
+        object-position: 0em 100%
+        // object-position: bottom 10% !important
+        right: 1000px
+.card:nth-child(3) //mars
+    img
+        min-height: calc($header-height) !important
+        object-fit: contain
+.card:nth-child(4) //pop
+    img
+        min-height: calc($header-height) !important
+        object-fit: contain
+
+.card:nth-child(5) //pop
+    img
+        width: calc($header-height * 1.2) !important
+        max-width: calc($header-height * 1.4) !important
+        min-height: calc($header-height) !important
+        object-fit: contain
+        
