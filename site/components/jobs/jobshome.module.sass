@@ -1,0 +1,51 @@
+$header-height: 420px
+.card
+    height: auto
+    margin-bottom: 5em
+    color: var(--color-grey-darker)
+    header, a
+        width: 100%
+    header
+        height: $header-height
+        border-radius: 0.5em
+        margin: 1.5em 0
+        align-items: flex-end
+        display: flex
+        .right
+            margin-left: 10em
+        img
+            object-fit: contain
+            max-height: $header-height
+    label
+        font-family: var(--font-serif) 
+        font-size:1.2em 
+        font-style:  italic
+        font-weight: 600
+        letter-spacing: 0.06em
+        margin: 0.8em 0
+        -webkit-font-smoothing: antialiased
+
+    label:before 
+            position: relative
+            content: "  "
+            display: inline-flex
+            width: 4em
+            height: 0.06em
+            margin-right: 1em
+            bottom: 0.2em
+            background-color: var(--color-grey-dark)
+    h3,p
+        font-family: var(--font-kabel) 
+    h3 
+        font-size:  1.3em
+        font-weight: 900
+        -webkit-font-smoothing: antialiased
+        letter-spacing: 0.01em
+    a
+        color: var(--color-dark)
+        text-decoration: underline
+    p
+        font-size:  1.6em
+        font-weight:400
+        letter-spacing: 0.02em
+        -webkit-font-smoothing: antialiased

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_content_content_with_medias",
+  "info": {
+    "displayName": "Content With Media",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "content_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.media"
+    }
+  }
+}

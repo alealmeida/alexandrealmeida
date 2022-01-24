@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_main_data",
+  "info": {
+    "displayName": "Main Data",
+    "icon": "tv",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Year": {
+      "type": "biginteger"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "Long_Description": {
+      "type": "text"
+    }
+  }
+}

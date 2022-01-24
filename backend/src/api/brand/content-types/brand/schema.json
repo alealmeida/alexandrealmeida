@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands",
+  "info": {
+    "singularName": "brand",
+    "pluralName": "brands",
+    "displayName": "Brand",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "brand"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
+      "mappedBy": "brand"
+    }
+  }
+}

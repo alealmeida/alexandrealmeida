@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_content_main_contents",
+  "info": {
+    "displayName": "Main Content",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    },
+    "main_media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.media"
+    }
+  }
+}

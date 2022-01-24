@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "pluginOptions": {},
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    },
+    "Old": {
+      "pluginOptions": {},
+      "type": "boolean",
+      "default": false
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "jobs"
+    },
+    "year": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Lock": {
+      "type": "boolean",
+      "default": false
+    },
+    "main_content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.main-content"
+    },
+    "title": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "jobs"
+    },
+    "image_for_home": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "hero_for_page": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "page_content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content-with-media"
+    }
+  }
+}

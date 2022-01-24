@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_media_media",
+  "info": {
+    "displayName": "media",
+    "icon": "surprise"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "bg_color": {
+      "type": "string"
+    }
+  }
+}

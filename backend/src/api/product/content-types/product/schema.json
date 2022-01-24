@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "products"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
+      "mappedBy": "product"
+    }
+  }
+}
