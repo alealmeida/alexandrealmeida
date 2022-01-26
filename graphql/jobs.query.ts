@@ -5,19 +5,9 @@ export async function getJobsForHome() {
     return client
         .query(
             {query: gql `
-            fragment prod on ProductEntityResponse{data{attributes{name}}}
-            fragment br on BrandEntityResponse{data{attributes{name}}}
             query JobsHome {
               jobs(filters: { Old: { eq: false } }, sort: "year:desc") {
                 data {
-                  attributes {
-                    product {
-                      ...prod
-                    }
-                    brand {
-                      ...br
-                    }
-                  }
                   infos: attributes {
                     short_description
                     slug

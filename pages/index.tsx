@@ -1,4 +1,4 @@
-import {GetStaticProps} from "next"
+import {GetStaticProps,GetServerSideProps} from "next"
 import {getJobsForHome} from "../graphql/jobs.query";
 import HighlightsJobs from "../components/jobshome/jobshome";
 import styles from './../styles/main.module.sass'
@@ -18,8 +18,7 @@ const Home = ({jobs}) => {
         </section>
     ])
 }
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     const jobs = await getJobsForHome();
 
     return {
@@ -27,6 +26,15 @@ export const getStaticProps: GetStaticProps = async () => {
             jobs: jobs
         }
     };
-}
+  }
+// export const getStaticProps: GetStaticProps = async () => {
+//     const jobs = await getJobsForHome();
+
+//     return {
+//         props: {
+//             jobs: jobs
+//         }
+//     };
+// }
 
 export default Home;
