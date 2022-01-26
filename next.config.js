@@ -49,12 +49,11 @@ const configs = require('./configs.json');
 // // { page: '/jobs', query: { slug: 'pop' } },   } }, };
 
 module.exports = {
-    // optimizedImages,
-  reactStrictMode: true, 
+    target: 'serverless',
     images: {
-        // domains: [configs.STRAPI_DOMAIN, 'alexandrealmeida.me'],
-        domains: ['localhost','alexandrealmeida.me'],
-    },
+        domains: [configs.STRAPI_DOMAIN],
+      },
+  reactStrictMode: true, 
   
     cssModules: true,
     webpack: config => {

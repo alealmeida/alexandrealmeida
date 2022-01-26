@@ -1,0 +1,8 @@
+{
+  "/404": "pages/404.html",
+  "/_error": "pages/_error.js",
+  "/about": "pages/about.html",
+  "/": "pages/index.js",
+  "/jobs/[slug]": "pages/jobs/[slug].js",
+  "/jobs": "pages/jobs.html"
+}

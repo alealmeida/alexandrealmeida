@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development node server.js",
-    "dev and kill": "sudo kill $(lsof -ti:3000) && next",
+    "dev and kill": "sudo kill $(lsof -ti:5000) && next",
     "build": "next build",
-    "start": "set NODE_ENV=dev ",
+    "start": "next start",
     "prod": "next build && next export"
   },
   "dependencies": {

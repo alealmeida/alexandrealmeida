@@ -1,4 +1,4 @@
 {
-    "STRAPI_URL": ["http://localhost","http://alexandrealmeida.me"],
+    "STRAPI_URL": "http://localhost:1337",
     "STRAPI_DOMAIN": "localhost"
 }
