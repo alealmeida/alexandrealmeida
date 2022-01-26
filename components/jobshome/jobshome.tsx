@@ -9,42 +9,36 @@ import {HighlightsProps, styleTheme } from './jobshome.interface';
 import urlBuilder from '../../lib/imageUrl'
 
 const HighlightsJobs = ({jobs}) => {
-	const j = jobs.infos;
+	const j = jobs.attributes;
 	const year = j.year;
 	const title = j.title;
 	const brand = jobs.attributes.brand.data.attributes.name;
-	const product = jobs.attributes.product.data.attributes.name;
-	const description = jobs.infos.short_description;
-	const low_brand = jobs.attributes.brand.data.attributes.name.toLowerCase().split(" ")[0];
+	const product = j.product.data.attributes.name;
+	const description = j.short_description;
+	const low_brand = brand.toLowerCase().split(" ")[0];
 
-	const bg_color = jobs.infos.main_content.main_media.bg_color;
+	const bg_color = j.bg_color;
 
-	const image = jobs.attributes.image_home.data.attributes
+	const image = j.image_home.data.attributes
 	const image_url = image.url
-	console.log(low_brand )
-	const getBackground = (background, brand) => ([background || (
-			brand === low_brand
-				? `theme-${low_brand}-primary`
-				: null
-		)]);
 
-	const Highlights = styled.header<HighlightsProps>
-	`
-	background: var(--color-${bg_color});
-	${({ brand }) => styleTheme[brand]};
-	`;
-	
+	// const Highlights = styled.header<HighlightsProps>
+	// `
+	// background: var(${bg_color});
+	// ${({ brand }) => styleTheme[brand]};
+	// `;
+	console.log(jobs.attributes)
 	return (
 		<article  className={styles.card}>
-			<Link href="/jobs/[slug]" as={`/jobs/${jobs.infos.slug}`}>
+			<Link href="/jobs/[slug]" as={`/jobs/${j.slug}`}>
 				<a>
-					<Highlights brand={low_brand}>
+					{/* <Highlights brand={low_brand}>
 						<Image src={urlBuilder(image_url)} alt={image} width={image.width} height={image.height}/>
-					</Highlights>
+					</Highlights> */}
 				</a>
 			</Link>
 			<label>{`${brand} • ${title}`}</label>
-			<Link href="/jobs/[slug]" as={`/jobs/${jobs.infos.slug}`}>
+			<Link href="/jobs/[slug]" as={`/jobs/${j.slug}`}>
 				<a>
 					
 			<p>{`${description}`}</p>

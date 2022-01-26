@@ -9,17 +9,11 @@ async function GetJobsForHome() {
               jobs(filters: { Old: { eq: false } }, sort: "year:desc") {
                 data {
                   attributes {
-                    short_description
                     slug
+                    short_description
                     title
                     year
-                    brand {data{attributes {name}}}
-                    product {data{attributes {name}}}
-                    main_content {
-                      main_media {
-                        bg_color
-                      }
-                    }
+                    bg_color
                     image_home: image_for_home {
                       data {
                         attributes {
@@ -30,13 +24,21 @@ async function GetJobsForHome() {
                         }
                       }
                     }
-                  }
-                    infos: attributes {
-                    short_description
-                    slug
-                    title
-                    year
+                    product {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
                     }
+                    brand {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
