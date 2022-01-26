@@ -15,6 +15,11 @@ async function GetJobsForHome() {
                     year
                     brand {data{attributes {name}}}
                     product {data{attributes {name}}}
+                    main_content {
+                      main_media {
+                        bg_color
+                      }
+                    }
                     image_home: image_for_home {
                       data {
                         attributes {

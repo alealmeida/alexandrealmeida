@@ -17,19 +17,20 @@ const HighlightsJobs = ({jobs}) => {
 	const description = jobs.infos.short_description;
 	const low_brand = jobs.attributes.brand.data.attributes.name.toLowerCase().split(" ")[0];
 
+	const bg_color = jobs.infos.main_content.main_media.bg_color;
 
 	const image = jobs.attributes.image_home.data.attributes
 	const image_url = image.url
-	console.log(jobs.attributes)
-const getBackground = (background, brand) => ([background || (
-        brand === low_brand
-            ? `theme-${low_brand}-primary`
-            : null
-    )]);
+	console.log(low_brand )
+	const getBackground = (background, brand) => ([background || (
+			brand === low_brand
+				? `theme-${low_brand}-primary`
+				: null
+		)]);
 
 	const Highlights = styled.header<HighlightsProps>
 	`
-	background: var(--color-${( {brand, color} ) => getBackground(color, brand)});
+	background: var(--color-${bg_color});
 	${({ brand }) => styleTheme[brand]};
 	`;
 	
