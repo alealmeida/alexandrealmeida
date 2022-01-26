@@ -39,22 +39,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			return result.data.postBySlug
 		});
 
-	// const infos = data && {
-	// 	job: data.infos,
-	// 	brand: data.attributes.brand.data.attributes.name,
-	// 	product: data.attributes.product.data.attributes.name,
-	// };
+	const infos = data && {
+		job: data.infos,
+		brand: data.attributes.brand.data.attributes.name,
+		product: data.attributes.product.data.attributes.name,
+	};
 
-	// const content = data && {
-	// 	hero: data.infos.hero,
-	// 	main_content: data.infos.main_content,
-	// 	page_content: data.infos.page_content
-	// };
+	const content = data && {
+		hero: data.infos.hero,
+		main_content: data.infos.main_content,
+		page_content: data.infos.page_content
+	};
 
-	// const low_brand = infos.brand.toLowerCase().split(" ")[0];
+	const low_brand = infos.brand.toLowerCase().split(" ")[0];
 
-	// return { props: { data, slug, infos, content, low_brand } };
-	return { props: { data, slug} };
+	return { props: { data, slug, infos, content, low_brand } };
+	// return { props: { data, slug} };
 }
 
 

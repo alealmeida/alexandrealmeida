@@ -18,9 +18,9 @@ const HighlightsJobs = ({jobs}) => {
 	const low_brand = jobs.attributes.brand.data.attributes.name.toLowerCase().split(" ")[0];
 
 
-	const image = j.image_home.data.attributes
+	const image = jobs.attributes.image_home.data.attributes
 	const image_url = image.url
-
+	console.log(jobs.attributes)
 const getBackground = (background, brand) => ([background || (
         brand === low_brand
             ? `theme-${low_brand}-primary`

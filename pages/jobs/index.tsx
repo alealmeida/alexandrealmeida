@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Navbar} from "../../components/navbar/navbar";
 import {Topbar} from "../../components/topbar/topbar";
-import {getAll} from '../../graphql/jobs.query';
 import {GetAllJobsQuery, GetJobBySlugQuery} from '../../graphql/jobsc.query';
 import {useQuery} from '@apollo/client';
 
