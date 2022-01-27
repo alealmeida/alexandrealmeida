@@ -1,10 +1,11 @@
 $header-height: 512px // 16*32
+$content-width: 672px 
 .card
     height: auto
     margin-bottom: 5em
     color: var(--color-grey-darker)
     header, a
-        width: 100%
+        content-width: 672px 
     header
         height: $header-height
         border-radius: 0.3em
@@ -28,7 +29,7 @@ $header-height: 512px // 16*32
         margin: 0.8em 0
         -webkit-font-smoothing: antialiased
         color: var(--color-grey-darker)
-        word-spacing: 0.2em
+        word-spacing: 0.1em
 
     label:before 
             position: relative
@@ -61,15 +62,15 @@ $header-height: 512px // 16*32
 // exception    
 .card:nth-child(1) //avec
     img
-        width: calc($header-height * 1.2) !important
-        max-width: calc($header-height * 1.4) !important
+        width: calc($content-width * 1.2  ) !important
+        max-width: calc($content-width *1.4 ) !important
         min-height: calc($header-height) !important
         object-fit: contain
+        object-position: 0em 100%
 .card:nth-child(2) //natura
     img
-        // max-height: calc($header-height * 0.5)  !important
-        width: calc($header-height * 1.5) !important
-        max-width: calc($header-height * 2) !important
+        width: calc($content-width * 1.3  ) !important
+        max-width: calc($content-width * 1.4 ) !important
         min-height: calc($header-height) !important
         object-fit: contain
         object-position: 0em 100%

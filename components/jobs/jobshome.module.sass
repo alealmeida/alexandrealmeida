@@ -1,10 +1,11 @@
 $header-height: 420px
+$content-width: 672px 
 .card
     height: auto
     margin-bottom: 5em
     color: var(--color-grey-darker)
-    header, a
-        width: 100%
+    header, a, img
+        width: $content-width
     header
         height: $header-height
         border-radius: 0.5em
@@ -14,8 +15,8 @@ $header-height: 420px
         .right
             margin-left: 10em
         img
-            object-fit: contain
-            max-height: $header-height
+            height: $header-height
+            object-position: 0 100% 
     label
         font-family: var(--font-serif) 
         font-size:1.2em 

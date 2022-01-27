@@ -18,6 +18,7 @@ const Highlights = styled.header<HighlightsProps>
 	`
 	background-color:  ${({ bg }) => (bg ? `var(${bg}-op)` : 'transparent')};
 	transition: all 0.7s ease-out;
+	justify-content:flex-end;
   	:hover { 
 		background-color:  ${({ bg }) => (bg ? `var(${bg}-op-hover)` : 'transparent')};
 	}

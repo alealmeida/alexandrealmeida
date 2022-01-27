@@ -180,6 +180,7 @@ const Highlights = styled.header<HighlightsProps>
 	height: 100%;
 	display:flex;
 	transition: all 0.7s ease-out;
+	justify-content: center;
 	}
 	`;
 
@@ -193,7 +194,7 @@ const Highlights = styled.header<HighlightsProps>
 // PAGE
 
 const Page = ({ data, infos, content, low_brand }: JobsProps) => {
-	if (!data || data === null) return <div>Experiência não encontrada</div>;
+	if (!data || data === null) return <div>Carregando</div>;
 
 	const {main_content, page_content, hero} = content
 	const hero_attr = hero.data.attributes;
