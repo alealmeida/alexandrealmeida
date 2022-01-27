@@ -49,9 +49,9 @@ const configs = require('./configs.json');
 // // { page: '/jobs', query: { slug: 'pop' } },   } }, };
 
 module.exports = {
-    // target: 'serverless',
+    target: 'serverless',
     images: {
-        domains: [configs.STRAPI_DOMAIN],
+        domains: configs.STRAPI_DOMAIN,
       },
   reactStrictMode: true, 
   

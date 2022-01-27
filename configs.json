@@ -1,4 +1,3 @@
 {
-    "STRAPI_URL": "http://localhost:1337",
-    "STRAPI_DOMAIN": "localhost"
+    "STRAPI_DOMAIN": ["localhost","res.cloudinary.com"]
 }
