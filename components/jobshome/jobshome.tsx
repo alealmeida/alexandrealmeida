@@ -16,7 +16,11 @@ export type HighlightsProp = {
 
 const Highlights = styled.header<HighlightsProps>
 	`
-	background-color:  ${({ bg }) => (bg ? `var(${bg})` : 'transparent')};
+	background-color:  ${({ bg }) => (bg ? `var(${bg}-op)` : 'transparent')};
+	transition: all 0.7s ease-out;
+  	:hover { 
+		background-color:  ${({ bg }) => (bg ? `var(${bg}-op-hover)` : 'transparent')};
+	}
 	`;
 
 
