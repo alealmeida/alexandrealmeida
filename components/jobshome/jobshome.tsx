@@ -22,19 +22,19 @@ const HighlightsJobs = ({jobs}) => {
 	const image = j.image_home.data.attributes
 	const image_url = image.url
 
-	// const Highlights = styled.header<HighlightsProps>
-	// `
-	// background: var(${bg_color});
-	// ${({ brand }) => styleTheme[brand]};
-	// `;
-	console.log(jobs.attributes)
+	const Highlights = styled.header<HighlightsProps>
+	`
+	background: var(${bg_color});
+	${({ brand }) => styleTheme[brand]};
+	`;
+	console.log(brand)
 	return (
 		<article  className={styles.card}>
 			<Link href="/jobs/[slug]" as={`/jobs/${j.slug}`}>
 				<a>
-					{/* <Highlights brand={low_brand}>
+					<Highlights brand={low_brand}>
 						<Image src={urlBuilder(image_url)} alt={image} width={image.width} height={image.height}/>
-					</Highlights> */}
+					</Highlights>
 				</a>
 			</Link>
 			<label>{`${brand} • ${title}`}</label>

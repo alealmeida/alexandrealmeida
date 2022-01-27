@@ -4,7 +4,31 @@ exports.id = 560;
 exports.ids = [560];
 exports.modules = {
 
-/***/ 775:
+/***/ 4699:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": function() { return /* binding */ imageUrl; }
+});
+
+;// CONCATENATED MODULE: ./configs.json
+var configs_namespaceObject = JSON.parse('{"M":"http://localhost:1337"}');
+;// CONCATENATED MODULE: ./lib/imageUrl.js
+
+
+const urlBuilder = src => {
+  // const fullUrl = configs.STRAPI_URL + src
+  return `${configs_namespaceObject.M}${src}`;
+};
+
+/* harmony default export */ var imageUrl = (urlBuilder);
+
+/***/ }),
+
+/***/ 3237:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28,22 +52,13 @@ var external_react_markdown_default = /*#__PURE__*/__webpack_require__.n(externa
 // EXTERNAL MODULE: ./pages/jobs/slug.module.sass
 var slug_module = __webpack_require__(2619);
 var slug_module_default = /*#__PURE__*/__webpack_require__.n(slug_module);
-;// CONCATENATED MODULE: external "styled-components"
-var external_styled_components_namespaceObject = require("styled-components");;
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_namespaceObject);
+// EXTERNAL MODULE: external "styled-components"
+var external_styled_components_ = __webpack_require__(9914);
+var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
-;// CONCATENATED MODULE: ./configs.json
-var configs_namespaceObject = JSON.parse('{"M":"http://localhost:1337"}');
-;// CONCATENATED MODULE: ./lib/imageUrl.js
-
-
-const urlBuilder = src => {
-  // const fullUrl = configs.STRAPI_URL + src
-  return `${configs_namespaceObject.M}${src}`;
-};
-
-/* harmony default export */ var imageUrl = (urlBuilder);
+// EXTERNAL MODULE: ./lib/imageUrl.js + 1 modules
+var imageUrl = __webpack_require__(4699);
 // EXTERNAL MODULE: ./lib/apollo.js
 var apollo = __webpack_require__(5923);
 // EXTERNAL MODULE: ./graphql/jobsc.query.ts
@@ -158,7 +173,7 @@ const Page = ({
         children: [/*#__PURE__*/jsx_runtime_.jsx(Hero, {
           brand: low_brand,
           children: /*#__PURE__*/jsx_runtime_.jsx(next_image.default, {
-            src: imageUrl(hero_attr.url),
+            src: (0,imageUrl/* default */.Z)(hero_attr.url),
             alt: hero_attr.name,
             objectFit: "cover",
             width: hero_attr.width,
@@ -198,7 +213,7 @@ const Page = ({
                 "padding": "4em 0"
               },
               children: /*#__PURE__*/jsx_runtime_.jsx(next_image.default, {
-                src: imageUrl(main.main_media.media.data.attributes.url),
+                src: (0,imageUrl/* default */.Z)(main.main_media.media.data.attributes.url),
                 objectFit: "contain",
                 width: main.main_media.media.data.attributes.width,
                 height: main.main_media.media.data.attributes.height
@@ -224,7 +239,7 @@ const Page = ({
                 "padding": "4em 0"
               },
               children: /*#__PURE__*/jsx_runtime_.jsx(next_image.default, {
-                src: imageUrl(args.media.data.attributes.url),
+                src: (0,imageUrl/* default */.Z)(args.media.data.attributes.url),
                 objectFit: "contain",
                 width: args.media.data.attributes.width,
                 height: args.media.data.attributes.height
@@ -328,6 +343,14 @@ module.exports = require("react");;
 "use strict";
 module.exports = require("react/jsx-runtime");;
 
+/***/ }),
+
+/***/ 9914:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("styled-components");;
+
 /***/ })
 
 };
@@ -337,7 +360,7 @@ module.exports = require("react/jsx-runtime");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-var __webpack_exports__ = __webpack_require__.X(0, [999,675,923,509], function() { return __webpack_exec__(775); });
+var __webpack_exports__ = __webpack_require__.X(0, [999,675,923,509], function() { return __webpack_exec__(3237); });
 module.exports = __webpack_exports__;
 
 })();

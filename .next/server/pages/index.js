@@ -4,7 +4,31 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
-/***/ 1545:
+/***/ 4699:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": function() { return /* binding */ imageUrl; }
+});
+
+;// CONCATENATED MODULE: ./configs.json
+var configs_namespaceObject = JSON.parse('{"M":"http://localhost:1337"}');
+;// CONCATENATED MODULE: ./lib/imageUrl.js
+
+
+const urlBuilder = src => {
+  // const fullUrl = configs.STRAPI_URL + src
+  return `${configs_namespaceObject.M}${src}`;
+};
+
+/* harmony default export */ var imageUrl = (urlBuilder);
+
+/***/ }),
+
+/***/ 2927:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -189,7 +213,36 @@ var jobshome_module = __webpack_require__(3268);
 var jobshome_module_default = /*#__PURE__*/__webpack_require__.n(jobshome_module);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(5675);
+// EXTERNAL MODULE: external "styled-components"
+var external_styled_components_ = __webpack_require__(9914);
+var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+;// CONCATENATED MODULE: ./components/jobshome/jobshome.interface.ts
+const styleTheme = {
+  avec: {
+    'justify-content': 'center'
+  },
+  credicard: {
+    'justify-content': 'center'
+  },
+  mars: {
+    'justify-content': 'center'
+  },
+  natura: {
+    'justify-content': 'center'
+  },
+  veloe: {
+    'justify-content': 'center'
+  }
+};
+// EXTERNAL MODULE: ./lib/imageUrl.js + 1 modules
+var imageUrl = __webpack_require__(4699);
 ;// CONCATENATED MODULE: ./components/jobshome/jobshome.tsx
+
+
+
+
 
 
 
@@ -208,19 +261,30 @@ const HighlightsJobs = ({
   const low_brand = brand.toLowerCase().split(" ")[0];
   const bg_color = j.bg_color;
   const image = j.image_home.data.attributes;
-  const image_url = image.url; // const Highlights = styled.header<HighlightsProps>
-  // `
-  // background: var(${bg_color});
-  // ${({ brand }) => styleTheme[brand]};
-  // `;
-
-  console.log(jobs.attributes);
+  const image_url = image.url;
+  const Highlights = (external_styled_components_default()).header`
+	background: var(${bg_color});
+	${({
+    brand
+  }) => styleTheme[brand]};
+	`;
+  console.log(brand);
   return /*#__PURE__*/(0,jsx_runtime_.jsxs)("article", {
     className: (jobshome_module_default()).card,
     children: [/*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
       href: "/jobs/[slug]",
       as: `/jobs/${j.slug}`,
-      children: /*#__PURE__*/jsx_runtime_.jsx("a", {})
+      children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+        children: /*#__PURE__*/jsx_runtime_.jsx(Highlights, {
+          brand: low_brand,
+          children: /*#__PURE__*/jsx_runtime_.jsx(next_image.default, {
+            src: (0,imageUrl/* default */.Z)(image_url),
+            alt: image,
+            width: image.width,
+            height: image.height
+          })
+        })
+      })
     }), /*#__PURE__*/jsx_runtime_.jsx("label", {
       children: `${brand} • ${title}`
     }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
@@ -354,6 +418,14 @@ module.exports = require("isomorphic-unfetch");;
 
 /***/ }),
 
+/***/ 5273:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("next/dist/next-server/lib/head.js");;
+
+/***/ }),
+
 /***/ 8417:
 /***/ (function(module) {
 
@@ -367,6 +439,22 @@ module.exports = require("next/dist/next-server/lib/router-context.js");;
 
 "use strict";
 module.exports = require("next/dist/next-server/lib/router/utils/get-asset-path-from-route.js");;
+
+/***/ }),
+
+/***/ 5519:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("next/dist/next-server/lib/to-base-64.js");;
+
+/***/ }),
+
+/***/ 444:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("next/dist/next-server/server/image-config.js");;
 
 /***/ }),
 
@@ -386,6 +474,14 @@ module.exports = require("react/jsx-runtime");;
 
 /***/ }),
 
+/***/ 9914:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("styled-components");;
+
+/***/ }),
+
 /***/ 4453:
 /***/ (function() {
 
@@ -400,7 +496,7 @@ module.exports = require("react/jsx-runtime");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-var __webpack_exports__ = __webpack_require__.X(0, [999,664,923], function() { return __webpack_exec__(1545); });
+var __webpack_exports__ = __webpack_require__.X(0, [999,664,675,923], function() { return __webpack_exec__(2927); });
 module.exports = __webpack_exports__;
 
 })();
