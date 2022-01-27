@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		job: data.infos,
 		brand: data.attributes.brand.data.attributes.name,
 		product: data.attributes.product.data.attributes.name,
+		bg_color: data.attributes.bg_color,
 	};
 
 	const content = data && {
@@ -70,6 +71,7 @@ type JobsProps = {
 	slug: string;
 	low_brand: string;
 	infos: {
+		bg_color: string;
 		job: {
 			title: string;
 			short_description: string;
@@ -91,6 +93,7 @@ type JobsProps = {
 type HeroProps = {
 	data: {
 		attributes: {
+			bg_color: string;
 			name: string;
 			url: string;
 			width: string;
@@ -98,6 +101,7 @@ type HeroProps = {
 		}
 	}
 }
+
 
 type MediaProps = {
 	bg_color: string;
@@ -154,22 +158,11 @@ export interface JobSlugProps {
 
 
 
+export type HighlightsProps = {
+	color?: ColorType;
+	bg?: ColorType;
+  };
 
-
-
-
-
-// FUNCTIONS
-
-const getBackground = (background, brand) => {
-	const low_brand = brand.toLowerCase().split(" ")[0];
-	return ([background || (
-
-		brand === low_brand
-			? `theme-${low_brand}-primary`
-			: null
-	)]);
-}
 
 
 
@@ -178,15 +171,17 @@ const getBackground = (background, brand) => {
 
 // STYLED
 
-const Hero = styled.header<HeroProps>
+const Highlights = styled.header<HighlightsProps>
 	`
-		width: 100vw;
-		height: 100%;
-		display:flex;
-		background: var(--color-${({ brand, color }) => getBackground(color, brand)}-dark);
-		justify-content:center;
-		`;
-
+	width: 100vw;
+	height: 100%;
+	display:flex;
+	background-color:  ${({ bg }) => (bg ? `var(${bg})` : 'transparent')};width: 100vw;
+	height: 100%;
+	display:flex;
+	transition: all 0.7s ease-out;
+	}
+	`;
 
 
 
@@ -203,13 +198,14 @@ const Page = ({ data, infos, content, low_brand }: JobsProps) => {
 	const {main_content, page_content, hero} = content
 	const hero_attr = hero.data.attributes;
 
+	const bg_color = infos.bg_color;	
 	return (
 		<div id={low_brand}>
 			<section key={1} className={styles.job_page}>
 				<section className={styles.header_content}>
-					<Hero brand={low_brand}>
+					<Highlights bg={bg_color}>
 						<Image src={urlBuilder(hero_attr.url)} alt={hero_attr.name} objectFit="cover" width={hero_attr.width} height={hero_attr.height} />
-					</Hero>
+					</Highlights>
 					<article>
 						<header>
 							<h2>{infos.brand} / {infos.product}</h2>

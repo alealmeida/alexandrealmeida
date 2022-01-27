@@ -5,10 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-import {HighlightsProps, styleTheme } from './jobshome.interface';
+// import {HighlightsProps, styleTheme } from './jobshome.interface';
 import urlBuilder from '../../lib/imageUrl'
 
-export type HighlightsProp = {
+export type HighlightsProps = {
 	color?: ColorType;
 	bg?: ColorType;
   };

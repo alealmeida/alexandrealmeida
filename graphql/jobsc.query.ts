@@ -32,6 +32,7 @@ query Job($slug: String!) {
   postBySlug(slug: $slug) {
     data {
       attributes {
+        bg_color
         slug
         product {
           data{attributes{name}}
