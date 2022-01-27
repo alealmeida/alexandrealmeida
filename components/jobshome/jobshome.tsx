@@ -8,6 +8,18 @@ import styled from 'styled-components'
 import {HighlightsProps, styleTheme } from './jobshome.interface';
 import urlBuilder from '../../lib/imageUrl'
 
+export type HighlightsProp = {
+	color?: ColorType;
+	bg?: ColorType;
+  };
+
+
+const Highlights = styled.header<HighlightsProps>
+	`
+	background-color:  ${({ bg }) => (bg ? `var(${bg})` : 'transparent')};
+	`;
+
+
 const HighlightsJobs = ({jobs}) => {
 	const j = jobs.attributes;
 	const year = j.year;
@@ -22,17 +34,12 @@ const HighlightsJobs = ({jobs}) => {
 	const image = j.image_home.data.attributes
 	const image_url = image.url
 
-	const Highlights = styled.header<HighlightsProps>
-	`
-	background: var(${bg_color});
-	${({ brand }) => styleTheme[brand]};
-	`;
-	console.log(brand)
+	
 	return (
 		<article  className={styles.card}>
 			<Link href="/jobs/[slug]" as={`/jobs/${j.slug}`}>
 				<a>
-					<Highlights brand={low_brand}>
+					<Highlights bg={bg_color}>
 						<Image src={urlBuilder(image_url)} alt={image} width={image.width} height={image.height}/>
 					</Highlights>
 				</a>

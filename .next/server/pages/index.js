@@ -28,7 +28,7 @@ const urlBuilder = src => {
 
 /***/ }),
 
-/***/ 2927:
+/***/ 1545:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -218,24 +218,6 @@ var next_image = __webpack_require__(5675);
 // EXTERNAL MODULE: external "styled-components"
 var external_styled_components_ = __webpack_require__(9914);
 var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
-;// CONCATENATED MODULE: ./components/jobshome/jobshome.interface.ts
-const styleTheme = {
-  avec: {
-    'justify-content': 'center'
-  },
-  credicard: {
-    'justify-content': 'center'
-  },
-  mars: {
-    'justify-content': 'center'
-  },
-  natura: {
-    'justify-content': 'center'
-  },
-  veloe: {
-    'justify-content': 'center'
-  }
-};
 // EXTERNAL MODULE: ./lib/imageUrl.js + 1 modules
 var imageUrl = __webpack_require__(4699);
 ;// CONCATENATED MODULE: ./components/jobshome/jobshome.tsx
@@ -247,7 +229,11 @@ var imageUrl = __webpack_require__(4699);
 
 
 
-
+const Highlights = (external_styled_components_default()).header`
+	background-color:  ${({
+  bg
+}) => bg ? `var(${bg})` : 'transparent'};
+	`;
 
 const HighlightsJobs = ({
   jobs
@@ -262,13 +248,6 @@ const HighlightsJobs = ({
   const bg_color = j.bg_color;
   const image = j.image_home.data.attributes;
   const image_url = image.url;
-  const Highlights = (external_styled_components_default()).header`
-	background: var(${bg_color});
-	${({
-    brand
-  }) => styleTheme[brand]};
-	`;
-  console.log(brand);
   return /*#__PURE__*/(0,jsx_runtime_.jsxs)("article", {
     className: (jobshome_module_default()).card,
     children: [/*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
@@ -276,7 +255,7 @@ const HighlightsJobs = ({
       as: `/jobs/${j.slug}`,
       children: /*#__PURE__*/jsx_runtime_.jsx("a", {
         children: /*#__PURE__*/jsx_runtime_.jsx(Highlights, {
-          brand: low_brand,
+          bg: bg_color,
           children: /*#__PURE__*/jsx_runtime_.jsx(next_image.default, {
             src: (0,imageUrl/* default */.Z)(image_url),
             alt: image,
@@ -496,7 +475,7 @@ module.exports = require("styled-components");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-var __webpack_exports__ = __webpack_require__.X(0, [999,664,675,923], function() { return __webpack_exec__(2927); });
+var __webpack_exports__ = __webpack_require__.X(0, [999,664,675,923], function() { return __webpack_exec__(1545); });
 module.exports = __webpack_exports__;
 
 })();
