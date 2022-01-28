@@ -78,6 +78,8 @@ $content-width: 672px
         right: 1000px
 .card:nth-child(3) //mars
     img
+        width: calc($content-width ) !important
+        max-width: calc($content-width * 1.2) !important
         min-height: calc($header-height) !important
         object-fit: contain
 .card:nth-child(4) //pop
@@ -87,8 +89,8 @@ $content-width: 672px
 
 .card:nth-child(5) //pop
     img
-        width: calc($header-height * 1.2) !important
-        max-width: calc($header-height * 1.4) !important
+        width: calc($content-width ) !important
+        max-width: calc($content-width * 1.2) !important
         min-height: calc($header-height) !important
         object-fit: contain
         
