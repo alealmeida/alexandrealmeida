@@ -292,7 +292,7 @@ const Home = ({
           children: [/*#__PURE__*/jsx_runtime.jsx("s", {
             children: " @Avec"
           }), "  @Hyperlocal"]
-        }), ". Aqui crio novos produtos e experi\xEAncias digitais que impactam na vida das pesssoas."]
+        }), ". Aqui crio novos produtos e experi\xEAncias digitais que trazem valor e grande impacto na vida das pesssoas."]
       })]
     })
   }), /*#__PURE__*/jsx_runtime.jsx("section", {
@@ -331,7 +331,7 @@ const getServerSideProps = async context => {
 
 /***/ }),
 
-/***/ 48650:
+/***/ 53910:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -425,11 +425,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/",
-        buildId: "Dr5lDJJVpj8rKimjasUsn",
-        escapedBuildId: "Dr5lDJJVpj8rKimjasUsn",
+        buildId: "sv1QDAC_EhydQwySuD9wd",
+        escapedBuildId: "sv1QDAC_EhydQwySuD9wd",
         basePath: "",
         pageIsDynamic: false,
-        encodedPreviewProps: {previewModeId:"9861e7b5fc20d2220131fad937131887",previewModeSigningKey:"802463c0d4397c56bd210f2669760424daf2c2623b253373316ff87f3c81ad7d",previewModeEncryptionKey:"da7f3a52049c3ef2663df5c016ed2aa10ca820fa381630fe445983be2588ce6f"}
+        encodedPreviewProps: {previewModeId:"206cfb705394290c68b5eafccb014291",previewModeSigningKey:"43f9c41013a23fbdd2880da2bc498883d4540ae4f5f788f4bcf3ab8efedab60e",previewModeEncryptionKey:"6953d22004575f0f889caed18cf5654faeeae57c8848aafbdbc534850e55ea12"}
       })
       
     
@@ -637,7 +637,7 @@ module.exports = require("zlib");;
 /******/ 	__webpack_require__.x = function() {
 /******/ 		// Load entry module and return exports
 /******/ 		// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [721,901,727,289], function() { return __webpack_require__(48650); })
+/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [721,901,727,289], function() { return __webpack_require__(53910); })
 /******/ 		__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 		return __webpack_exports__;
 /******/ 	};
