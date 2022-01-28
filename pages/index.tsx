@@ -12,7 +12,7 @@ const Home = ({jobs}) => {
             <header>
                 <h1>Alexandre Almeida</h1>
                 <h2>Product Designer na
-                <i><s> @Avec</s>  @Hyperlocal</i>. Aqui crio novos produtos e experiências digitais que impactam na vida
+                <i><s> @Avec</s>  @Hyperlocal</i>. Aqui crio novos produtos e experiências digitais que trazem valor e grande impacto na vida
                     das pesssoas.</h2>
             </header>
         </section>,
