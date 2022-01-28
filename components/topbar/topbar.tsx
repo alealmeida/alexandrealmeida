@@ -12,14 +12,14 @@ export const Topbar = () => {
                         <a>Ale Almeida</a>
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     ...
                 </li>
                 <li>
                     <Link href="/about">
                         <a>Sobre mim</a>
                     </Link>
-                </li>
+                </li> */}
                 
                 </ul>
         </nav>
