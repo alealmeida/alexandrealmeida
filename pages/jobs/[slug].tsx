@@ -253,7 +253,7 @@ const Page = ({ data, infos, content, low_brand }: JobsProps) => {
 								</div>
 								<div className={styles.content}>
 									{page_content.content_media.map((args,i) => (
-										<div key={i} className={styles.bg_content} style={{ "background": `var(${args.bg_color})`, "padding": "4em 0" }}>
+										<div key={i} className={styles.bg_content} style={{ "background": `var(${args.bg_color})` }}>
 											<Image src={urlBuilder(args.media.data.attributes.url)} objectFit="contain" width={args.media.data.attributes.width} height={args.media.data.attributes.height} />
 										</div>
 									))}

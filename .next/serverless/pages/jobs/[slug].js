@@ -312,8 +312,7 @@ const Page = ({
             children: page_content.content_media.map((args, i) => /*#__PURE__*/jsx_runtime.jsx("div", {
               className: (slug_module_default()).bg_content,
               style: {
-                "background": `var(${args.bg_color})`,
-                "padding": "4em 0"
+                "background": `var(${args.bg_color})`
               },
               children: /*#__PURE__*/jsx_runtime.jsx(next_image.default, {
                 src: imageUrl(args.media.data.attributes.url),
@@ -333,7 +332,7 @@ const Page = ({
 
 /***/ }),
 
-/***/ 6776:
+/***/ 60818:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -427,11 +426,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/jobs/[slug]",
-        buildId: "gDs5ggfH1YzXarRSdXgKU",
-        escapedBuildId: "gDs5ggfH1YzXarRSdXgKU",
+        buildId: "Z1cIs7kxeCaGU2IaTTMrP",
+        escapedBuildId: "Z1cIs7kxeCaGU2IaTTMrP",
         basePath: "",
         pageIsDynamic: true,
-        encodedPreviewProps: {previewModeId:"1507debafde60b2361ec04a6b51da0ee",previewModeSigningKey:"8c2b01785c12d1bbe3b2612f1c9759addb741a79b413f34bc85f282c4ad5e445",previewModeEncryptionKey:"da704d30af32d87fd57231d0633f171ae612306d1aea74fb49243280a7290827"}
+        encodedPreviewProps: {previewModeId:"dceebcc00997eb9e0242589912162aaf",previewModeSigningKey:"bc5ce8025447f06715f497c84a3183c8f64e0d86e86c45a2e8ba43b195568ff1",previewModeEncryptionKey:"1ca8c4ccad0eb06e41fb53b9396d93f37e95dd249bcbc3298a8ddfe3536ce5fc"}
       })
       
     
@@ -633,7 +632,7 @@ module.exports = require("zlib");;
 /******/ 	__webpack_require__.x = function() {
 /******/ 		// Load entry module and return exports
 /******/ 		// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [721,901,727,456,289], function() { return __webpack_require__(6776); })
+/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [721,901,727,456,289], function() { return __webpack_require__(60818); })
 /******/ 		__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 		return __webpack_exports__;
 /******/ 	};
