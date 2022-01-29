@@ -3,7 +3,8 @@ $media-width: calc(1024px + 4vw)
 
 $header-height: 480px
 $media-height: calc(480px + 6vh)
-  
+
+$topbar-height: calc(3.6em + 2vh) 
 section.job_page
     display: flex
     flex-direction: column
@@ -11,6 +12,8 @@ section.job_page
     align-items: center
     font-size: 18px
     width: 100vw
+    position: relative
+    top: $topbar-height
     section
         width: 100vw
         align-items: center
