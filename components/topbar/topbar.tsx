@@ -5,11 +5,11 @@ import styles from './topbar.module.sass'
 export const Topbar = () => {
    
     return (
-        <nav>
+        <nav className={styles.topbar}>
             <ul className={styles.nav}>
                 <li>
                     <Link href="/">
-                        <a>Ale Almeida</a>
+                        <a>Alexandre Almeida</a>
                     </Link>
                 </li>
                 {/* <li>

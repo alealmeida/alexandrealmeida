@@ -1,7 +1,30 @@
-.nav
+$content-width: 762px
+.topbar
+	position: fixed
 	display: flex
 	flex-direction: row
-	width: 100vw
 	justify-content: center
-	li
-		padding: 3vh 1vw
+	top: 0
+	z-index: 999999
+	width: 100%
+	background-color: var(--color-white-op)
+	backdrop-filter: blur(3px) opacity(1	)
+	-webkit-backdrop-filter: blur(3px) opacity(1)
+	.nav
+		display: flex
+		flex-direction: row
+		width: $content-width
+		justify-content: flex-start
+		padding: calc(1em + 2vh) 0
+		li
+			padding: 0
+			display: flex
+			a
+				color: var(--color-grey-darker)
+				font-size: 1.1em
+				font-family: var(--font-serif) 
+				text-decoration: underline
+				text-transform: uppercase
+				font-weight: bolder
+				:hover
+					text-decoration: none

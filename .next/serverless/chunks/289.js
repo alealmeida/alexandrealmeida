@@ -6,7 +6,7 @@ exports.modules = {
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"polyfillFiles":["static/chunks/polyfills-a54b4f32bdc1ef890ddd.js"],"devFiles":[],"ampDevFiles":[],"lowPriorityFiles":["static/Z1cIs7kxeCaGU2IaTTMrP/_buildManifest.js","static/Z1cIs7kxeCaGU2IaTTMrP/_ssgManifest.js"],"pages":{"/":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/995-767fe5c3edbb10563557.js","static/css/4cd74d41f7e529f65559.css","static/chunks/pages/index-8f316d71913bc944e568.js"],"/404":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/pages/404-a5be6aaaa22fd28fbfe8.js"],"/_app":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/css/13e41f334aed5c23df66.css","static/chunks/pages/_app-715a72d8524199822185.js"],"/_error":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/pages/_error-9d014bdedb748ff555b4.js"],"/about":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/pages/about-d2752ada5227f17aac2d.js"],"/jobs":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/549-7b98df54598ef27c4e2c.js","static/css/8fde2a1e4a2a63b63eef.css","static/chunks/pages/jobs-b1484897e691af74dd4c.js"],"/jobs/[slug]":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/995-767fe5c3edbb10563557.js","static/chunks/456-90d9223e54bde107e20a.js","static/css/b38339a1463ab4e93d09.css","static/chunks/pages/jobs/[slug]-6c0fb4a68846efd2c38f.js"]},"ampFirstPages":[]}');
+module.exports = JSON.parse('{"polyfillFiles":["static/chunks/polyfills-a54b4f32bdc1ef890ddd.js"],"devFiles":[],"ampDevFiles":[],"lowPriorityFiles":["static/og_OavnDxwBR2qCucmWrn/_buildManifest.js","static/og_OavnDxwBR2qCucmWrn/_ssgManifest.js"],"pages":{"/":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/995-767fe5c3edbb10563557.js","static/css/83efb9d863861eea23a9.css","static/chunks/pages/index-8f316d71913bc944e568.js"],"/404":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/pages/404-a5be6aaaa22fd28fbfe8.js"],"/_app":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/css/a55eb0afa0512adcb1d2.css","static/chunks/pages/_app-b25afdaf7d076687eea2.js"],"/_error":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/pages/_error-9d014bdedb748ff555b4.js"],"/about":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/pages/about-d2752ada5227f17aac2d.js"],"/jobs":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/549-7b98df54598ef27c4e2c.js","static/css/8fde2a1e4a2a63b63eef.css","static/chunks/pages/jobs-b1484897e691af74dd4c.js"],"/jobs/[slug]":["static/chunks/webpack-61095c13c5984b221292.js","static/chunks/framework-0441fae7fd130f37dee1.js","static/chunks/main-3f3aab15adf54228f86a.js","static/chunks/995-767fe5c3edbb10563557.js","static/chunks/456-90d9223e54bde107e20a.js","static/css/b38339a1463ab4e93d09.css","static/chunks/pages/jobs/[slug]-6c0fb4a68846efd2c38f.js"]},"ampFirstPages":[]}');
 
 /***/ }),
 
@@ -138,13 +138,14 @@ var topbar_module_default = /*#__PURE__*/__webpack_require__.n(topbar_module);
 
 const Topbar = () => {
   return /*#__PURE__*/jsx_runtime.jsx("nav", {
+    className: (topbar_module_default()).topbar,
     children: /*#__PURE__*/jsx_runtime.jsx("ul", {
       className: (topbar_module_default()).nav,
       children: /*#__PURE__*/jsx_runtime.jsx("li", {
         children: /*#__PURE__*/jsx_runtime.jsx(next_link.default, {
           href: "/",
           children: /*#__PURE__*/jsx_runtime.jsx("a", {
-            children: "Ale Almeida"
+            children: "Alexandre Almeida"
           })
         })
       })
@@ -280,6 +281,7 @@ Error.getInitialProps = ({
 
 // Exports
 module.exports = {
+	"topbar": "topbar_topbar__JKZJT",
 	"nav": "topbar_nav__394SB"
 };
 
