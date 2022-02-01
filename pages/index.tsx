@@ -1,56 +1,36 @@
-import {GetStaticProps,GetServerSideProps,GetStaticPaths} from "next"
+import React, {FC} from 'react';
+import {GetServerSideProps} from "next"
 import {GetJobsForHome} from "../graphql/jobs.query";
-import {GetAllJobsQuery} from "../graphql/jobsc.query";
-// import {getJobsForHome,} from "../graphql/jobs.query";
 import HighlightsJobs from "../components/jobshome/jobshome";
 import styles from './../styles/main.module.sass'
-
-import client from '../lib/apollo';
-const Home = ({jobs}) => {
+const Home = ({data}) => {
     return ([
         <section className={styles.intro}>
             <header>
                 <h1>Alexandre Almeida</h1>
                 <h2>Product Designer na
-                <i><s> @Avec</s>  @Hyperlocal</i>. Aqui crio novos produtos e experiências digitais que trazem valor e grande impacto na vida
-                    das pesssoas.</h2>
+                    <i>
+                        <s>
+                            @Avec
+                        </s>
+                        @Hyperlocal
+                    </i>. Aqui crio novos produtos e experiências digitais que trazem valor e grande
+                    impacto na vida das pesssoas.</h2>
             </header>
         </section>,
         <section>
-            {jobs.map((j, i) => <HighlightsJobs key={i} jobs={j}/>)}
-            
+            {data.map((job, i) => <HighlightsJobs key={i} data={job}/>)}
         </section>
     ])
 }
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const jobs = await GetJobsForHome();
+export const getServerSideProps: GetServerSideProps = async () => {
+    const response = await GetJobsForHome();
+    const {data} = response;
 
     return {
         props: {
-            jobs: jobs
+            data: data || null
         }
-    };
-  }
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-// 	const jobsSlugs = await client.query({ query: GetAllJobsQuery })
-// 		.then((result) => result.data.jobs.data);
-
-// 	if (!jobsSlugs.data) return { paths: [], fallback: true };
-
-// 	const paths = jobsSlugs.data.jobs.data.map((jobs) => ({
-// 		params: { slug: jobs.id.slug },
-// 	}));
-// 	return { paths, fallback: false }
-// }
-// export const getStaticProps: GetStaticProps = async () => {
-//     const jobs = await GetJobsForHome();
-
-//     return {
-//         props: {
-//             jobs: jobs
-//         }
-//     };
-// }
-
+    }
+}
 export default Home;

@@ -1,19 +1,52 @@
 import gql from "graphql-tag";
 import client from '../lib/apollo';
-
+const GetAllJobsQuery = gql `
+query Jobs {
+  jobs {
+    data {
+      id:attributes{slug}
+      attributes {
+        slug
+        title
+        product {
+          data {
+            attributes {
+              name
+              brand {
+                data {
+                  attributes {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
+  }
+}
+`;
 async function GetJobsForHome() {
     return client
         .query(
             {query: gql `
-            query JobsHome {
-              jobs(filters: { Old: { eq: false } }, sort: "year:desc") {
+            query JobsHome_V2 {
+              jobs(sort: "year:desc") {
                 data {
+                  id
                   attributes {
-                    slug
+                    bg_color
                     short_description
                     title
-                    year
-                    bg_color
+                    slug
+                    brand {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
                     image_home: image_for_home {
                       data {
                         attributes {
@@ -31,20 +64,13 @@ async function GetJobsForHome() {
                         }
                       }
                     }
-                    brand {
-                      data {
-                        attributes {
-                          name
-                        }
-                      }
-                    }
                   }
                 }
               }
             }
       `}
         )
-        .then((result) => result.data.jobs.data);
+        .then((result) => result.data.jobs);
 }
 
 // Query + GQL
@@ -52,31 +78,16 @@ async function GetAll() {
     return client
         .query(
             {query: gql `
-            query Jobs {
-                jobs {
-                  data {
-                    attributes {
-                      slug
-                      title
-                      product {
-                        data {
-                          attributes {
-                            name
-                           
-                          }
-                        }
-                      }
-                      brand {
-                        data {
-                          attributes {
-                            name
-                          }
-                        }
-                      }
-                    }
-                  } 
+            query JobsHome_V2 {
+              jobs( sort: "year:desc") {
+                data {
+                  id
+                  attributes {
+                    bg_color
+                  }
                 }
               }
+            }
       `}
         )
         .then((result) => result.data.jobs.data)

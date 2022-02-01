@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development node server.js",
-    "dev and kill": "sudo kill $(lsof -ti:5000) && next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "prod": "next build && next export"
   },
   "dependencies": {
@@ -20,6 +19,7 @@
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
     "apollo-server-micro": "^3.6.1",
+    "compile": "0.0.2",
     "editorjs-react-renderer": "^3.0.1",
     "express": "^4.17.1",
     "fetch": "^1.1.0",

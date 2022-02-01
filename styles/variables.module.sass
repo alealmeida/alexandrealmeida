@@ -1,0 +1,24 @@
+@use "sass:map"
+
+$theme-colors: ("success": #28a745, "info": #17a2b8, "warning": #ffc107)
+
+// $w(
+//     "home-header" : 672 px,
+//     "home-content" : 672 px,
+//     "main-header" : 672 px,
+//     "main-content" : 672 px,
+//     "page-header" : 672 px,
+//     "page-content" : 672 px,
+// )
+$header(
+    "home-header" : 672 px,
+    "home-content" : 672 px,
+    "main-header" : 672 px,
+    "main-content" : 672 px,
+    "page-header" : 672 px,
+    "page-content" : 672 px,
+)
+
+.alert
+  background-color: map.get($theme-colors, "warning")
+

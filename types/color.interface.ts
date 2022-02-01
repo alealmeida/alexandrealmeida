@@ -9,13 +9,13 @@ export type ColorType =
   | 'gray-darkest'
   | 'white' 
   | 'theme-avec-primary'
-  | 'theme-avec-primary-dark'
+  | 'theme-avec-primary'
   | 'theme-caixa-primary'
   | 'theme-mars-primary'
   | 'theme-natura-primary'
   | 'theme-veloe-primary'
   | 'theme-credicars-primary'
-
+  
 
 
 //   const HeroStyled = styled.header`

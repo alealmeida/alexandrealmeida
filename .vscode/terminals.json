@@ -1,0 +1,16 @@
+{
+    "autorun": true,
+    "terminals": [
+        {
+            "name": "DEV",
+            "description": "For NPM commands",
+            "focus": true,
+            "commands": [
+                "NODE_ENV=development node server.js"
+            ]
+        },{
+            "label":"zsh",
+            "shellPath":"/bin/zsh"
+        }
+    ]
+}
