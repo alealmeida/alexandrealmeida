@@ -1,12 +1,13 @@
 
 import * as React from 'react'
 import {Topbar} from "./../../components/topbar/topbar";
+import {Footer} from "./../../components/footer/footer";
 
 import Head from 'next/head'
 type LayoutProps = {
 	title?: string
 }
-const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => {
+const Layout: React.FC<LayoutProps> = ({ children, title }) => {
 	return ( 
 		<main className="layout">
 			<Head>
@@ -17,6 +18,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => {
 			</Head>
 			<Topbar/>
 			{children}
+			<Footer/>
 		</main>)
 }
 export default Layout

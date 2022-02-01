@@ -27,51 +27,91 @@ query Jobs {
   }
 }
 `;
-async function GetJobsForHome() {
-    return client
-        .query(
-            {query: gql `
-            query JobsHome_V2 {
-              jobs(sort: "year:desc") {
-                data {
-                  id
-                  attributes {
-                    bg_color
-                    short_description
-                    title
-                    slug
-                    brand {
-                      data {
-                        attributes {
-                          name
-                        }
-                      }
-                    }
-                    image_home: image_for_home {
-                      data {
-                        attributes {
-                          name
-                          url
-                          width
-                          height
-                        }
-                      }
-                    }
-                    product {
-                      data {
-                        attributes {
-                          name
-                        }
-                      }
-                    }
-                  }
-                }
-              }
+
+const GetJobsForHome = gql `
+query JobsHome_V2 {
+  jobs(sort: "year:desc") {
+    data {
+      id
+      attributes {
+        bg_color
+        short_description
+        title
+        slug
+        brand {
+          data {
+            attributes {
+              name
             }
-      `}
-        )
-        .then((result) => result.data.jobs);
+          }
+        }
+        image_home: image_for_home {
+          data {
+            attributes {
+              name
+              url
+              width
+              height
+            }
+          }
+        }
+        product {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
 }
+`;
+// async function GetJobsForHome() {
+//     return client
+//         .query(
+//             {query: gql `
+//             query JobsHome_V2 {
+//               jobs(sort: "year:desc") {
+//                 data {
+//                   id
+//                   attributes {
+//                     bg_color
+//                     short_description
+//                     title
+//                     slug
+//                     brand {
+//                       data {
+//                         attributes {
+//                           name
+//                         }
+//                       }
+//                     }
+//                     image_home: image_for_home {
+//                       data {
+//                         attributes {
+//                           name
+//                           url
+//                           width
+//                           height
+//                         }
+//                       }
+//                     }
+//                     product {
+//                       data {
+//                         attributes {
+//                           name
+//                         }
+//                       }
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//       `}
+//         )
+//         .then((result) => result.data.jobs);
+// }
 
 // Query + GQL
 async function GetAll() {

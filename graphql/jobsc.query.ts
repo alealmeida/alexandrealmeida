@@ -31,28 +31,13 @@ const GetJobBySlugQuery = gql `
 query Job($slug: String!) {
   postBySlug(slug: $slug) {
     data {
+      id
       attributes {
-        slug
-        product {
-          data {
-            attributes {
-              name
-            }
-          }
-        }
-        brand {
-          data {
-            attributes {
-              name
-            }
-          }
-        }
-      }
-      infos: attributes {
         title
         short_description
         year
         description
+        bg_color
         main_content {
           content
           main_media {
@@ -65,6 +50,20 @@ query Job($slug: String!) {
                   height
                 }
               }
+            }
+          }
+        }
+        brand {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+        product {
+          data {
+            attributes {
+              name
             }
           }
         }

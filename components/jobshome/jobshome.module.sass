@@ -1,16 +1,19 @@
+@use "sass:map"
+
+@import 'variables.module.sass'
 $header-height: 512px // 16*32
 $content-width: 672px
 
 .card
     height: auto
-    margin-bottom: 5em
+    margin-bottom: 4em
     color: var(--color-grey-darker)
     width: $content-width
     header
-        height: $header-height
-        width: $content-width
+        height: map.get($heights, "home-header")
+        width: map.get($widths, "home-header")
         border-radius: 0.3em
-        margin: 1.2em 0
+        margin: 0.8em 0
         align-items: center
         justify-content: flex-end
         flex-direction: column
@@ -23,7 +26,7 @@ $content-width: 672px
             min-height: calc($header-height * 0.9) !important
     label
         font-family: var(--font-serif) 
-        font-size:1.25em 
+        font-size:1.1em 
         // font-style:  italic
         font-weight: 500
         letter-spacing: 0.015em
@@ -42,23 +45,36 @@ $content-width: 672px
             margin-right: 1.2em
             bottom: 0.2em
             background-color: var(--color-grey)
-    h3,p
-        font-family: var(--font-kabel) 
     h3 
-        font-size:  1.2em
-        font-weight: 900
-        -webkit-font-smoothing: auto
-        letter-spacing: 0.01em
+        font-family: var(--font-kabel) 
+        font-size:  1.15em
+        font-weight: 500
+        -webkit-font-smoothing: antialiased
+        letter-spacing: -0.015em
+        word-spacing: 0.03em
+        width: fit-content
+        white-space: nowrap
+        position: relative
+        padding-top: 0.3em
+        &:after
+            position: absolute
+            content: " "
+            display: flex
+            width:  100%
+            height: 1px
+            align-self: center
+            justify-self: center
+            background-color: var(--color-grey)
+            margin-top: 0.065em
+            transition: opacity 0.2s
+        // -webkit-font-smoothing: auto
     a
         color: var(--color-darkest)
-        text-decoration: underline
         font-size:  1.6em
         letter-spacing: 0.005em
-    p
-        font-weight:400
-        -webkit-font-smoothing: antialiased
-        // -webkit-font-smoothing: auto
-
+    h3:hover
+        &:after
+            opacity: 0
     
 
 // exception 

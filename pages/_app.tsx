@@ -5,6 +5,7 @@ import {ApolloProvider} from '@apollo/client';
 import client from "../lib/apollo";
 import '../styles/global.sass'
 import '../styles/design.tokens.sass'
+import '../styles/variables.module.sass'
 import Layout from '../components/layout/layout'
 
 

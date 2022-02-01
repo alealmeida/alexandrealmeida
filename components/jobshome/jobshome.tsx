@@ -47,7 +47,7 @@ type HighlightsProps = {
 	bg: string;
   };
   
-const Highlights = styled.header<HighlightsProps>`
+  export const HighlightsHome = styled.header<HighlightsProps>`
 	background-color:  ${({ bg }) => `var(${bg}-op)`};
 	transition: all 0.7s ease-out;
 	justify-content:flex-end;
@@ -81,16 +81,17 @@ const HighlightsJobs = ({data} : HighlightsJobsProps) => {
         <article className={styles.card}>
             <Link href="/jobs/[slug]" as={`/jobs/${slug}`}>
                 <a>
-                    <Highlights bg={bg_color}>
-                        <Image src={urlBuilder(url)} alt={name} width={width} height={height}/>
-                    </Highlights>
+                    <HighlightsHome bg={bg_color}>
+                        <Image src={urlBuilder(url)} alt={name} width={width} height={height}
+      layout='responsive'
+      quality={50} />
+                    </HighlightsHome>
                 </a>
             </Link>
             <label>{`${brand_name} • ${title}`}</label>
             <Link href="/jobs/[slug]" as={`/jobs/${slug}`}>
                 <a>
-
-                    <p>{`${short_description}`}</p>
+                    <h3>{`${short_description}`}</h3>
                 </a>
             </Link>
         </article>

@@ -49,9 +49,10 @@ const configs = require('./configs.json');
 // // { page: '/jobs', query: { slug: 'pop' } },   } }, };
 
 module.exports = {
-    target: 'serverless',
     images: {
         domains: configs.STRAPI_DOMAIN,
+        deviceSizes: [320, 420, 768, 1024, 1200],
+        loader: "default",
       },
   reactStrictMode: true, 
   
