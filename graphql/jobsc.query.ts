@@ -32,13 +32,20 @@ query Job($slug: String!) {
   postBySlug(slug: $slug) {
     data {
       attributes {
-        bg_color
         slug
         product {
-          data{attributes{name}}
+          data {
+            attributes {
+              name
+            }
+          }
         }
         brand {
-          data {attributes {name}}
+          data {
+            attributes {
+              name
+            }
+          }
         }
       }
       infos: attributes {
@@ -47,7 +54,6 @@ query Job($slug: String!) {
         year
         description
         main_content {
-          title
           content
           main_media {
             bg_color
@@ -63,7 +69,6 @@ query Job($slug: String!) {
           }
         }
         page_content {
-          title
           content
           content_media {
             bg_color
