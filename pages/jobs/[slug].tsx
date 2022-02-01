@@ -249,7 +249,7 @@ const Page = ({data, slug} : JobsProps) => {
 													}}>
 													<Image
 														src={urlBuilder(main.main_media.media.data.attributes.url)}
-														objectFit="contain"
+														objectFit="contain"  quality={50}
 														width={main.main_media.media.data.attributes.width}
 														height={main.main_media.media.data.attributes.height}/>
 												</div>
@@ -290,7 +290,7 @@ const Page = ({data, slug} : JobsProps) => {
 																	}}>
 																	<Image
 																		src={urlBuilder(args.media.data.attributes.url)}
-																		objectFit="contain"
+																		objectFit="contain"  quality={50}
 																		width={args.media.data.attributes.width}
 																		height={args.media.data.attributes.height}/>
 																</div>

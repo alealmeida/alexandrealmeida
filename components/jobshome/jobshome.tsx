@@ -82,9 +82,7 @@ const HighlightsJobs = ({data} : HighlightsJobsProps) => {
             <Link href="/jobs/[slug]" as={`/jobs/${slug}`}>
                 <a>
                     <HighlightsHome bg={bg_color}>
-                        <Image src={urlBuilder(url)} alt={name} width={width} height={height}
-      layout='responsive'
-      quality={50} />
+                        <Image src={urlBuilder(url)} alt={name} width={width} height={height} quality={50} />
                     </HighlightsHome>
                 </a>
             </Link>
