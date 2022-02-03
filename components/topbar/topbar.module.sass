@@ -1,5 +1,9 @@
-$content-width: 762px
+@use "sass:map"
+
+@import 'variables.module.sass'
+
 $topbar-height: calc(3.6em + 2vh)
+
 .topbar
 	position: fixed
 	display: flex
@@ -17,7 +21,7 @@ $topbar-height: calc(3.6em + 2vh)
 	.nav
 		display: flex
 		flex-direction: row
-		width: $content-width
+		width: map.get($widths, "home-header")
 		justify-content: center
 		li
 			padding: 0

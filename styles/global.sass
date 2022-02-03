@@ -1,4 +1,6 @@
-$content_size: 768px
+@use "sass:map"
+
+@import 'variables.module.sass'
 
 html,
 body
@@ -6,8 +8,17 @@ body
   margin: 0
   font-family: var(--font-kabel)
   font-size: 16px
+body,
+body > div
   background: #ffffff
-
+  width: 100vw
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 0
+  margin: 0
+ 
 a 
   // color: var(--color-magenta)
   text-decoration: none
@@ -19,14 +30,15 @@ main, section
   display: flex
   flex-direction: column
   justify-content: center
-main
   align-items: center
+  margin: 0
+  padding: 0
 
+main
+  width: map.get($widths, "home-header")
 section
-  width: $content_size
-
-article, header
-  width: 100%
+  width: map.get($widths, "home-header")
+  align-content: center
 
 ul, li, p, a, label
   margin: 0

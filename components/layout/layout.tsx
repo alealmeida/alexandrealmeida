@@ -13,7 +13,9 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
 			<Head>
 				<title>{title}</title>
 				<meta charSet="utf-8"/>
-				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+				{/* <meta name="viewport" content="viewport-fit=cover" /> */}
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+				{/* <meta name="viewport" content="initial-scale=1.0, width=device-width"/> */}
 				<link rel="stylesheet" href="https://use.typekit.net/vfw0siz.css"/>
 			</Head>
 			<Topbar/>

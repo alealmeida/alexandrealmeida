@@ -49,6 +49,7 @@ const configs = require('./configs.json');
 // // { page: '/jobs', query: { slug: 'pop' } },   } }, };
 
 module.exports = {
+    optimizeFonts: true,
     images: {
         domains: configs.STRAPI_DOMAIN,
         deviceSizes: [320, 420, 768, 1024, 1200],

@@ -1,7 +1,18 @@
 @use "sass:map"
+// ratio: 4:3
+$r_43: 0.75
 
-$widths: ("home-header": 762px)
-$heights: ("home-header": 512px)
+// ratio: 16:9
+$r_169: 0.5625
+
+$container_home: calc(375px + 30vmin)
+$container_page: calc(800px + 30vmin)
+
+$hero_height: calc(10em + 25vmin)
+
+$widths: ("home-header": calc($container_home ), "page-header": calc($container_page ), "page-content": calc($container_page * $r_169 * 0.92 ),"page-hero": calc($container_page * $r_43 * 0.9 ))
+$heights: ("home-header": calc($container_home * $r_43 * 0.92),"page-header": calc($container_page * $r_43 * 0.92 ),"page-hero": calc($hero_height ))
+
 
 // $w(
 //     "home-header" : 672 px,

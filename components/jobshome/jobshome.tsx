@@ -1,20 +1,15 @@
-import React, { FC } from 'react';
+import React, { useEffect, useState} from 'react';
 import styles from './jobshome.module.sass'
 import Link from 'next/link'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-import urlBuilder from '../../lib/imageUrl'
 
-type ImgType =  {
-	bg_color: string;
-	data:{attributes :{
-		name: string;
-		url: string;
-		width: number;
-		height: number;
-		}}
-}
+import { ImgType } from '../images/images.interface';
+
+import urlBuilder from '../../lib/imageUrl'
+import { urlBlurred } from './../images/images';
+
 
 type ProductType =  {
 	data:{attributes :{
@@ -28,6 +23,11 @@ type BrandType = {
 }
 
 type HighlightsJobsProps= {
+    params : {
+    results: {
+        resources: any[];
+    };cloudn: string
+}
 	data: {
 		key: number;
 		id: number;
@@ -38,7 +38,7 @@ type HighlightsJobsProps= {
 			title: string;
 			brand:BrandType;
 			product:ProductType;
-			image_home:ImgType;
+			image_for_home:ImgType;
 		}}
   };
 
@@ -46,7 +46,7 @@ type HighlightsJobsProps= {
 type HighlightsProps = {
 	bg: string;
   };
-  
+
   export const HighlightsHome = styled.header<HighlightsProps>`
 	background-color:  ${({ bg }) => `var(${bg}-op)`};
 	transition: all 0.7s ease-out;
@@ -59,8 +59,11 @@ type HighlightsProps = {
 
 
 
-const HighlightsJobs = ({data} : HighlightsJobsProps) => {
+const HighlightsJobs = ({data, params} : HighlightsJobsProps) => {
+  const [image, setImage] = useState(null);
+
     const {id, attributes} = data
+    const {results,cloudn} = params
     const {
         title,
         bg_color,
@@ -68,21 +71,35 @@ const HighlightsJobs = ({data} : HighlightsJobsProps) => {
         short_description,
         product,
         brand,
-        image_home
+        image_for_home
     } = attributes
-
     const brand_name = brand.data.attributes.name
     const brand_slug = brand_name
         .toLowerCase()
         .split(" ")[0]
 
-    const {url, name, width, height} = image_home.data.attributes
+    const {url, name, width, height, hash} = image_for_home.data.attributes
+
+
+    useEffect(() => {
+      setTimeout(() => {
+        setImage(url );
+      }, 300)
+    }, [])
+  
+    results.resources.map(res=>console.log('results', res.url, url, cloudn))
+    console.log(image, url)
     return (
         <article className={styles.card}>
             <Link href="/jobs/[slug]" as={`/jobs/${slug}`}>
                 <a>
-                    <HighlightsHome bg={bg_color}>
-                        <Image src={urlBuilder(url)} alt={name} width={width} height={height}  />
+                    <HighlightsHome bg={bg_color}>  
+                      {image && <Image src={urlBuilder(url)} alt={name} width={width} layout='responsive' height={height} objectFit='contain'/> }
+                      {
+                          !image && (<div className={styles.load} style={{
+                                  backgroundImage: `url(${urlBlurred(hash, cloudn)})`
+                              }}/>)
+                      }
                     </HighlightsHome>
                 </a>
             </Link>

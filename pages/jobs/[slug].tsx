@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React, { useEffect, useState} from 'react';
 import ReactMarkdown from "react-markdown";
 import styles from './slug.module.sass';
 import { GetStaticProps, GetStaticPaths } from 'next'
@@ -12,6 +11,7 @@ import client from '../../lib/apollo';
 import { GetAllJobsQuery, GetJobBySlugQuery } from '../../graphql/jobsc.query';
 
 
+import { urlBlurred } from './../../components/images/images';
 
 
 
@@ -52,7 +52,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	// };
 
 
-   return{ props: { data,  slug } } ;
+	const cloudn = process.env.CLOUDINARY_NAME
+   return{ props: { data,  slug, cloudn} } ;
 	// return { props: { data, slug,attributes, content, low_brand } };
 	// return { props: { data, slug} };
 }
@@ -68,6 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 type JobsProps = {
 	data:JobSlugProps;
 	slug: string;
+	cloudn: string;
 	low_brand: string;
 };
 
@@ -80,6 +82,7 @@ type HeroProps = {
 			url: string;
 			width: string;
 			height: string;
+			hash: string;
 		}
 	}
 }
@@ -107,6 +110,7 @@ type MediaProps = {
 				url: string;
 				width: string;
 				height: string;
+				hash: string;
 			}
 		}
 	}
@@ -183,9 +187,10 @@ const Highlights = styled.header<HighlightsProps>
 
 // PAGE
 
-const Page = ({data, slug} : JobsProps) => {
+const Page = ({data, slug, cloudn} : JobsProps) => {
     if (!data || data.attributes === null) 
         return <div>Carregando</div>;
+	const [image, setImage] = useState(null);
     const {
         title,
         bg_color,
@@ -201,17 +206,24 @@ const Page = ({data, slug} : JobsProps) => {
     const brand_name = brand.data.attributes.name
     const product_name = product.data.attributes.name
 
+    useEffect(() => {
+		const dataURL = main_content.map(d =>{
+			return d.main_media.media.data.attributes.url
+		})
+		setTimeout(() => {
+		  setImage(dataURL );
+		}, 2000)
+	  }, [])
     return (data && (
         <div>
             <section className={styles.job_page}>
                 <section key={`1a`}  className={styles.header_content}>
                     <Highlights bg={bg_color}>
-                        <Image
-                            src={urlBuilder(hero_attr.url)}
-                            alt={hero_attr.name}
-                            objectFit="cover"
-                            width={hero_attr.width}
-                            height={hero_attr.height}/>
+							{image ? <Image src={urlBuilder(hero_attr.url)} width={hero_attr.width} height={hero_attr.height} objectFit='cover'/>:
+							
+								<Image src={urlBlurred(hero_attr.hash, cloudn)} width={hero_attr.width} height={hero_attr.height} objectFit='cover'/>
+							
+}
                     </Highlights>
                     <article>
                         <header>
@@ -239,7 +251,7 @@ const Page = ({data, slug} : JobsProps) => {
 													{main.content}
 												</ReactMarkdown>
 											</div>
-											{main.main_media.media.data ? (
+											{main.main_media.media.data && (
 											<div className={styles.content}>
 												<div
 													className={styles.bg_content}
@@ -247,14 +259,15 @@ const Page = ({data, slug} : JobsProps) => {
 														"background" : `var(${main.main_media.bg_color})`,
 														"padding" : "4em 0"
 													}}>
-													<Image
-														src={urlBuilder(main.main_media.media.data.attributes.url)}
-														objectFit="contain"
-														width={main.main_media.media.data.attributes.width}
-														height={main.main_media.media.data.attributes.height}/>
+														{image ? <Image src={urlBuilder(main.main_media.media.data.attributes.url)} width={1000} height={1000} objectFit='contain'/>:
+														
+														<div className={styles.load}>
+															<Image src={urlBlurred(main.main_media.media.data.attributes.hash, cloudn)} width={1000} height={1000} objectFit='contain'/>
+														</div>
+}
 												</div>
 											</div>
-											): null}
+											)}
 										</article>
                                         ])
                                 )
@@ -281,20 +294,21 @@ const Page = ({data, slug} : JobsProps) => {
 													page_content
 														.content_media
 														.map((args, i) => (
-															args.media.data != null ? (
+															args.media.data && (
 																<div
 																	key={i}
 																	className={styles.bg_content}
 																	style={{
 																		"background" : `var(${args.bg_color})`
 																	}}>
-																	<Image
-																		src={urlBuilder(args.media.data.attributes.url)}
-																		objectFit="contain"
-																		width={args.media.data.attributes.width}
-																		height={args.media.data.attributes.height}/>
+																	{image ? <Image src={urlBuilder(args.media.data.attributes.url)} width={args.media.data.attributes.width} height={args.media.data.attributes.height} objectFit='contain'/>:
+																	
+																	<div className={styles.load}>
+																		<Image src={urlBlurred(args.media.data.attributes.hash, cloudn)} width={args.media.data.attributes.width} height={args.media.data.attributes.height} objectFit='contain'/>
+																	</div>
+																	}
 																</div>
-															): null
+															)
 														))
 												}
 											</div>

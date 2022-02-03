@@ -34,10 +34,11 @@ query JobsHome_V2 {
     data {
       id
       attributes {
-        bg_color
+        slug
         short_description
         title
-        slug
+        year
+        bg_color
         brand {
           data {
             attributes {
@@ -45,13 +46,14 @@ query JobsHome_V2 {
             }
           }
         }
-        image_home: image_for_home {
+        image_for_home {
           data {
             attributes {
               name
               url
               width
               height
+              hash
             }
           }
         }

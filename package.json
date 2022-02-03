@@ -19,6 +19,7 @@
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
     "apollo-server-micro": "^3.6.1",
+    "cloudinary-build-url": "^0.2.4",
     "compile": "0.0.2",
     "editorjs-react-renderer": "^3.0.1",
     "express": "^4.17.1",

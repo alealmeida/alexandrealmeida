@@ -31,28 +31,12 @@ const GetJobBySlugQuery = gql `
 query Job($slug: String!) {
   postBySlug(slug: $slug) {
     data {
-      id
       attributes {
         title
         short_description
         year
         description
         bg_color
-        main_content {
-          content
-          main_media {
-            bg_color
-            media {
-              data {
-                attributes {
-                  url
-                  width
-                  height
-                }
-              }
-            }
-          }
-        }
         brand {
           data {
             attributes {
@@ -67,6 +51,22 @@ query Job($slug: String!) {
             }
           }
         }
+        main_content {
+          content
+          main_media {
+            bg_color
+            media {
+              data {
+                attributes {
+                  url
+                  width
+                  height
+              		hash
+                }
+              }
+            }
+          }
+        }
         page_content {
           content
           content_media {
@@ -77,6 +77,7 @@ query Job($slug: String!) {
                   url
                   width
                   height
+              		hash
                 }
               }
             }
@@ -89,6 +90,7 @@ query Job($slug: String!) {
               url
               width
               height
+              hash
             }
           }
         }
