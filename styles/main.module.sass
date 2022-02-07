@@ -1,10 +1,17 @@
+@use "sass:map"
+
+@import 'variables.module.sass'
 .intro
 	align-content: start
 	justify-content: left
+	align-items: flex-start
+	width: map.get($widths, "home-header")
+	max-width: 100%
 	header
-		padding: 12em 0.2em 8em
+		padding: calc(4em + 24vmin) 0.2em calc(4em + 8vmin)
+		width: 90%
 		h1, h2
-			font-size:  clamp(0.9em, 1.6vw, 2em ) // clamp(MIN, VAL, MAX) 
+			font-size:  clamp(1.3em, 2.8vmin, 1.9em ) // clamp(MIN, VAL, MAX) 
 			font-weight: 500
 			-webkit-font-smoothing: auto
 			color: var(--color-grey-darkest)

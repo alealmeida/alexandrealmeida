@@ -12,9 +12,9 @@ $content-width: 1280px
     margin-bottom: 4em
     color: var(--color-grey-darker)
     header
-        width: 100%
+        width: map.get($widths, "home-header")
+        max-width: 92vmin
         height: map.get($heights, "home-header")
-        max-width: $content-width
         border-radius: 0.2em
         align-items: center
         justify-content: flex-end
@@ -62,51 +62,53 @@ $content-width: 1280px
         font-size:  clamp(0.95em, 1.6vw, 1.15em ) // clamp(MIN, VAL, MAX) 
         // font-style:  italic
         font-weight: 500
-        letter-spacing: 0.015em
+        letter-spacing: 0.005em
         // margin: 1.4em 0 0.4em
         -webkit-font-smoothing: auto
         color: var(--color-grey-darkest)
-        word-spacing: 0.08em
+        word-spacing: 0.03em
         line-height: 2em
 
     label:before 
             position: relative
             content: "  "
             display: inline-flex
-            width: 2em
+            width: calc(0.5em + 5vmin)
             height: 0.08em
-            margin-right: 1.2em
+            margin-right: calc(0.2em + 2vmin)
             bottom: 0.2em
             background-color: var(--color-grey)
     h3 
         font-family: var(--font-kabel) 
-        font-size:  clamp(0.75em, 2.6vmin, 1.25em ) // clamp(MIN, VAL, MAX) 
+        font-size:  clamp(0.6em, 4.4vmin, 1.15em ) // clamp(MIN, VAL, MAX) 
         font-weight: 500
         -webkit-font-smoothing: antialiased
-        letter-spacing: -0.015em
+        letter-spacing: -0.02em
         word-spacing: 0.03em
+        line-height:1.6em
         width: fit-content
-        // white-space: nowrap
         position: relative
         padding-top: 0.3em
         padding-bottom: 0.6em
-        &:after
-            position: absolute
-            content: " "
-            display: flex
-            width:  100%
-            height: 1px
-            align-self: center
-            justify-self: center
-            background-color: var(--color-grey)
-            margin-top: 0.065em
-            transition: opacity 0.2s
+        text-decoration: underline
+        // &:after
+        //     position: absolute
+        //     content: " "
+        //     display: flex
+        //     width:  100%
+        //     height: 1px
+        //     align-self: center
+        //     justify-self: center
+        //     background-color: var(--color-grey)
+        //     margin-top: 0.065em
+        //     transition: opacity 0.2s
         // -webkit-font-smoothing: auto
     a
         color: var(--color-darkest)
         font-size:  1.6em
         letter-spacing: 0.005em
     h3:hover
+        text-decoration: none
         &:after
             opacity: 0
     
