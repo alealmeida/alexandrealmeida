@@ -1,11 +1,36 @@
-import React, {FC} from 'react';
+import React, { useState,useRef, useMemo,useEffect,createRef } from 'react';
+import { useScrollData } from "scroll-data-hook";
 import {GetServerSideProps} from "next"
 import {GetJobsForHome} from "../graphql/jobs.query";
 import HighlightsJobs from "../components/jobshome/jobshome";
 import styles from './../styles/main.module.sass';
 import client from '../lib/apollo';
+import { GetStaticProps, GetStaticPaths } from 'next'
+
+import usePosition from '../lib/usePosition';
+
+interface ref {
+    scrollSectionRef: HTMLDivElement;
+  }
 const Home = ({data, results, cloudn}) => {
-    return ([
+const dataLength = data.length;
+
+    const{
+        scrolling,
+        time,
+        speed,
+        direction,
+        position,
+        relativeDistance,
+        totalDistance
+      } = useScrollData({
+        onScrollStart: () => {},
+        onScrollEnd: () => {}
+      });
+
+
+    return ( ( 
+            [
         <section key={1} className={styles.intro}>
             <header>
                 <h1>Alexandre Almeida</h1>
@@ -13,14 +38,15 @@ const Home = ({data, results, cloudn}) => {
                     impacto na vida das pesssoas.</h2>
             </header>
         </section>,
-        <section key={2} >
-            {data.map((job, i) => <HighlightsJobs key={job.id} data={job} params={{results,cloudn}} />)}
-
-        </section>
-    ])
+        data.map((job, i) => 
+            <section key={2}>
+                <HighlightsJobs key={job.id} data={job} params={{results,cloudn}} />
+            </section>
+        ),
+    ]) 
+    )
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     const response = await client
         .query({query: GetJobsForHome})
         .then((result) => result.data.jobs);

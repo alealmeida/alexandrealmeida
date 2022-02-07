@@ -9,37 +9,56 @@ $header-height: 480px
 $media-height: calc(480px + 6vh)
 
 $topbar-height: calc(3.6em + 2vh) 
-section.job_page
+
+
+section.job_page,
+section.job_page > section,
+section.job_page > section > article,
+section.job_page > section > article header
     display: flex
-    flex-direction: column
-    justify-content: center
     align-items: center
+    position: relative
+    margin: 0
+
+section.job_page,
+section.job_page > section,
+section.job_page > section > article
+    flex-direction: column
+section.job_page > section > article > header
+    flex-direction: row
+
+//CONTENT
+
+section.job_page > section > article > header,
+section.job_page .header_content article,
+section.job_page article .content
+    width: map.get($widths, "page-header")
+    
+section.job_page article .content
+    align-items: flex-start
+
+
+.main_content .bg_content,
+.page_content .bg_content
+    align-self: center
+    width: map.get($widths, "page-image-content")
+
+
+section.job_page
     font-size: 18px
     width: 100vw
-    position: relative
     top: $topbar-height
     section
         width: 100vw
-        align-items: center
         article
             height: auto
-            width: $content-width
             color: var(--color-grey-darker)
-            display: flex
-            flex-direction: column
-            justify-content: center
-            align-items: center
             > header
-                position: relative
                 margin: 0
+                justify-content: space-between
             .content
                 margin-bottom: 2.4em // margem entre os conteúdos
-                width: map.get($widths, "page-content")
-                max-width: 60vw
-                display: flex
-                flex-direction: column
-                justify-content: center
-                align-items: center
+                // max-width: 60vw
                 h3
                     margin: 2.4em 0 0.6em
                     font-family: var(--font-display)
@@ -86,7 +105,6 @@ section.job_page
     .main_content
         div.bg_content
             position: relative
-            width: map.get($widths, "home-header")
             height: 100%
             .load
                 width: 100%
@@ -115,11 +133,10 @@ section.job_page
                 margin-left: 10em
             img
                 object-fit: contain
-                width: map.get($widths, "page-hero")
+                width: map.get($widths, "page-image-content")
         article
             height: auto
             color: var(--color-grey-darker)
-            width: $content-width
             h2 
                 font-family: var(--font-serif) 
                 font-size:  0.9em

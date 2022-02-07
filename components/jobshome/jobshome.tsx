@@ -1,4 +1,5 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState,useRef} from 'react';
+import { useScrollData } from "scroll-data-hook";
 import styles from './jobshome.module.sass'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -57,9 +58,10 @@ type HighlightsProps = {
 	`;
 
 
-
-
 const HighlightsJobs = ({data, params} : HighlightsJobsProps) => {
+
+
+
   const [image, setImage] = useState(null);
 
     const {id, attributes} = data
@@ -84,13 +86,15 @@ const HighlightsJobs = ({data, params} : HighlightsJobsProps) => {
     useEffect(() => {
       setTimeout(() => {
         setImage(url );
-      }, 300)
-    }, [])
+      }, 1000)
+        }
+    , [data])
   
-    results.resources.map(res=>console.log('results', res.url, url, cloudn))
-    console.log(image, url)
+    // results.resources.map(res=>console.log('results', res.url, url, cloudn))
+    // console.log(image, url)
+
     return (
-        <article className={styles.card}>
+        <article  className={styles.card}>
             <Link href="/jobs/[slug]" as={`/jobs/${slug}`}>
                 <a>
                     <HighlightsHome bg={bg_color}>  

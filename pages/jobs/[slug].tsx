@@ -252,7 +252,6 @@ const Page = ({data, slug, cloudn} : JobsProps) => {
 												</ReactMarkdown>
 											</div>
 											{main.main_media.media.data && (
-											<div className={styles.content}>
 												<div
 													className={styles.bg_content}
 													style={{
@@ -266,7 +265,6 @@ const Page = ({data, slug, cloudn} : JobsProps) => {
 														</div>
 }
 												</div>
-											</div>
 											)}
 										</article>
                                         ])
@@ -289,7 +287,6 @@ const Page = ({data, slug, cloudn} : JobsProps) => {
                                             </ReactMarkdown>
                                         </div>
 										
-											<div className={styles.content}>
 												{
 													page_content
 														.content_media
@@ -311,7 +308,6 @@ const Page = ({data, slug, cloudn} : JobsProps) => {
 															)
 														))
 												}
-											</div>
                                     </article>
                                         ])
                                 )
