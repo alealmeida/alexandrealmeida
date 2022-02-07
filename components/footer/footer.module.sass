@@ -14,7 +14,7 @@ $topbar-height: calc(3.6em + 2vh)
 	width: 100%
 	h4
 		color: var(--color-grey-darkest)
-		font-size: 1.5em
+		font-size:  clamp(1.1em, 2vw, 1.6em ) // clamp(MIN, VAL, MAX) 
 		font-family: var(--font-display) 
 		-webkit-font-smoothing: antialiased
 		font-weight: 600
@@ -24,7 +24,7 @@ $topbar-height: calc(3.6em + 2vh)
 		word-spacing: 0.04em
 	p
 		color: var(--color-grey-dark)
-		font-size: 0.95em
+		font-size:  clamp(0.8em, 1.8vmin, 1.15em ) // clamp(MIN, VAL, MAX) 
 		font-family: var(--font-text) 
 		font-weight: 400
 		padding: 0 0 1.5em
@@ -33,7 +33,7 @@ $topbar-height: calc(3.6em + 2vh)
 	.nav
 		display: flex
 		flex-direction: row
-		width: $content-width
+		width: 100%
 		justify-content: space-between
 		padding: 0 0 4em
 		ul
@@ -43,10 +43,10 @@ $topbar-height: calc(3.6em + 2vh)
 			justify-content: space-between
 			li
 				display: flex
-				padding: 0 0 
+				padding: 0 
 				a
 					color: var(--color-grey-darkest)
-					font-size: 1.2em
+					font-size:  clamp(0.95em, 1.8vmin, 1.25em ) // clamp(MIN, VAL, MAX) 
 					font-family: var(--font-text) 
 					text-decoration: underline
 					font-weight: 400
@@ -59,7 +59,7 @@ $topbar-height: calc(3.6em + 2vh)
 			width: auto
 			a
 				color: var(--color-grey-dark)
-				font-size: 1em
+				font-size:  clamp(0.85em, 1.6vmin, 1.05em ) // clamp(MIN, VAL, MAX) 
 				line-height: 1.8em
 .footer::before
 	position: absolute
