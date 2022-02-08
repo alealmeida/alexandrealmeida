@@ -5,16 +5,23 @@ $header-height: 512px // 16*32
 $content-width: 1280px 
 
 
-
+@media (max-width: 768px)
+    .card
+        header
+            width: map.get($m_widths, "home-header")
+            height: map.get($m_heights, "home-header")
+@media (min-width: 769px)
+    .card
+        header
+            width: map.get($widths, "home-header")
+            height: map.get($heights, "home-header")
     
 .card
     height: auto
     margin-bottom: 4em
     color: var(--color-grey-darker)
     header
-        width: map.get($widths, "home-header")
         max-width: 92vmin
-        height: map.get($heights, "home-header")
         border-radius: 0.2em
         align-items: center
         justify-content: flex-end
@@ -67,7 +74,7 @@ $content-width: 1280px
         -webkit-font-smoothing: auto
         color: var(--color-grey-darkest)
         word-spacing: 0.03em
-        line-height: 2em
+        line-height: 1.2em
 
     label:before 
             position: relative
@@ -80,11 +87,11 @@ $content-width: 1280px
             background-color: var(--color-grey)
     h3 
         font-family: var(--font-kabel) 
-        font-size:  clamp(0.6em, 4.4vmin, 1.15em ) // clamp(MIN, VAL, MAX) 
+        font-size:  clamp(0.6em, 5vmin, 1.25em ) // clamp(MIN, VAL, MAX) 
         font-weight: 500
         -webkit-font-smoothing: antialiased
         letter-spacing: -0.02em
-        word-spacing: 0.03em
+        // word-spacing: 0.03em
         line-height:1.6em
         width: fit-content
         position: relative

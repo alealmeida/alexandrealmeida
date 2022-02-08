@@ -10,6 +10,39 @@ $media-height: calc(480px + 6vh)
 
 $topbar-height: calc(3.6em + 2vh) 
 
+@media (max-width: 768px)
+    section.job_page > section > article > header,
+    section.job_page .header_content article,
+    section.job_page article .content
+        width: map.get($m_widths, "page-header")
+        max-width: 100%
+
+    .header_content
+        > header // hero
+            img
+                max-width: 100vw !important
+
+    .main_content .bg_content,
+    .page_content .bg_content
+        align-self: center
+        width: map.get($m_widths, "page-image-content")
+        max-width: 90vw !important
+
+		
+@media (min-width: 769px)
+    section.job_page > section > article > header,
+    section.job_page .header_content article,
+    section.job_page article .content
+        width: map.get($widths, "home-header")
+        height: map.get($heights, "home-header")
+
+    .main_content .bg_content,
+    .page_content .bg_content
+        align-self: center
+        width: map.get($widths, "page-image-content")
+        max-width: 80vw !important
+        img
+            max-width: 80vw !important
 
 section.job_page,
 section.job_page > section,
@@ -29,27 +62,16 @@ section.job_page > section > article > header
 
 //CONTENT
 
-section.job_page > section > article > header,
-section.job_page .header_content article,
-section.job_page article .content
-    width: map.get($widths, "page-header")
     
 section.job_page article .content
     align-items: flex-start
 
 
-.main_content .bg_content,
-.page_content .bg_content
-    align-self: center
-    width: map.get($widths, "page-image-content")
-
 
 section.job_page
     font-size: 18px
-    width: 100vw
-    top: $topbar-height
+    margin-top: $topbar-height
     section
-        width: 100vw
         article
             height: auto
             color: var(--color-grey-darker)
@@ -99,8 +121,6 @@ section.job_page
                     align-items: center
                     border-radius: 0.3em
                     margin: 1em 0 2em
-                    width: map.get($widths, "page-header")
-                    max-width: 90vw
 
     .main_content
         div.bg_content
@@ -116,14 +136,10 @@ section.job_page
                 justify-self: center
                 align-self: center
                 left: 0.4em
-            img
-                width: calc($media-width * 1.2 )
     .page_content
         div.bg_content
             height: auto
             padding: calc(1em + 5vh) calc(1em + 3vw)
-            img
-                width: 100%
     .header_content
         > header // hero
             margin-bottom: 6em
@@ -133,7 +149,6 @@ section.job_page
                 margin-left: 10em
             img
                 object-fit: contain
-                width: map.get($widths, "page-image-content")
         article
             height: auto
             color: var(--color-grey-darker)
