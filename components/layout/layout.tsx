@@ -6,7 +6,7 @@ import {Footer} from "./../../components/footer/footer";
 import Head from 'next/head'
 type LayoutProps = {
 	title?: string
-	router?: string
+	router?: {query: {slug: string}}
 }
 const Layout: React.FC<LayoutProps> = ({ children, title, router }) => {
 	const {query} = router
