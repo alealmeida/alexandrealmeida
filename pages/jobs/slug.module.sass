@@ -39,11 +39,13 @@ $topbar-height: calc(3.6em + 2vh)
     .page_content .bg_content
         align-self: center
         width: map.get($widths, "page-image-content")
+        min-width: 100%
 
 
     .main_content .bg_content
         img
             width: map.get($widths, "page-content") !important
+            height: auto !important
 
 section.job_page,
 section.job_page > section,
