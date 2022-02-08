@@ -12,7 +12,7 @@ import Layout from '../components/layout/layout'
 
 export default function App({Component, pageProps, router} : AppProps) {
     return (
-        <Layout {...pageProps}>
+        <Layout {...pageProps} router={router}>
             <ApolloProvider client={client}>
                 <Component {...pageProps}/>
             </ApolloProvider>

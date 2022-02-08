@@ -258,10 +258,10 @@ const Page = ({data, slug, cloudn} : JobsProps) => {
 														"background" : `var(${main.main_media.bg_color})`,
 														"padding" : "4em 0"
 													}}>
-														{image ? <Image src={urlBuilder(main.main_media.media.data.attributes.url)} width={1000} height={1000} objectFit='contain'/>:
+														{image ? <Image src={urlBuilder(main.main_media.media.data.attributes.url)} width={main.main_media.media.data.attributes.width} height={main.main_media.media.data.attributes.height} objectFit='contain'/>:
 														
 														<div className={styles.load}>
-															<Image src={urlBlurred(main.main_media.media.data.attributes.hash, cloudn)} width={1000} height={1000} objectFit='contain'/>
+															<Image src={urlBlurred(main.main_media.media.data.attributes.hash, cloudn)} width={main.main_media.media.data.attributes.width} height={main.main_media.media.data.attributes.height} objectFit='contain'/>
 														</div>
 }
 												</div>

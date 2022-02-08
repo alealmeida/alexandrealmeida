@@ -6,10 +6,13 @@ import {Footer} from "./../../components/footer/footer";
 import Head from 'next/head'
 type LayoutProps = {
 	title?: string
+	router?: string
 }
-const Layout: React.FC<LayoutProps> = ({ children, title }) => {
-	return ( 
-		<main className="layout">
+const Layout: React.FC<LayoutProps> = ({ children, title, router }) => {
+	const {query} = router
+	const rota = query && query.slug ? 'page' : 'home'
+	return ( rota && (
+		<main className={`${rota}`}>
 			<Head>
 				<title>{title}</title>
 				<meta charSet="utf-8"/>
@@ -22,5 +25,6 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
 			{children}
 			<Footer/>
 		</main>)
+		)
 }
 export default Layout

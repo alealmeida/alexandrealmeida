@@ -34,8 +34,17 @@ main, section
   margin: 0
   padding: 0
 
-main
-  width: 90%
+@media (max-width: 768px)
+  main.home
+    width: 90vw
+  main.page
+    width: 90vw
+		
+@media (min-width: 769px)
+  main.home
+    width: auto
+  main.page
+    width: map.get($widths, "page-image-content")
 section
   width: 100%
   align-content: center

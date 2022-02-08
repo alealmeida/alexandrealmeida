@@ -33,16 +33,17 @@ $topbar-height: calc(3.6em + 2vh)
     section.job_page > section > article > header,
     section.job_page .header_content article,
     section.job_page article .content
-        width: map.get($widths, "home-header")
-        height: map.get($heights, "home-header")
+        width: map.get($widths, "page-header")
 
     .main_content .bg_content,
     .page_content .bg_content
         align-self: center
         width: map.get($widths, "page-image-content")
-        max-width: 80vw !important
+
+
+    .main_content .bg_content
         img
-            max-width: 80vw !important
+            width: map.get($widths, "page-content") !important
 
 section.job_page,
 section.job_page > section,
@@ -126,8 +127,9 @@ section.job_page
         div.bg_content
             position: relative
             height: 100%
+            > div
+                display: flex !important
             .load
-                width: 100%
                 height: 100%
                 position: relative
                 background-repeat: no-repeat
@@ -135,7 +137,6 @@ section.job_page
                 display: flex
                 justify-self: center
                 align-self: center
-                left: 0.4em
     .page_content
         div.bg_content
             height: auto
