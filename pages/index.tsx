@@ -60,7 +60,8 @@ export const getStaticProps: GetStaticProps = async () => {
     }
     }).then(r => r.json());
 
-    if (data) return { props:  {data, results,cloudn}}
+    if (data) return { props:  {data, results,cloudn},
+    revalidate: 5,}
     else return ;
 }
 

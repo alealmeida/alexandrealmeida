@@ -53,7 +53,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 	const cloudn = process.env.CLOUDINARY_NAME
-   return{ props: { data,  slug, cloudn} } ;
+   return{ props: { data,  slug, cloudn},
+   revalidate: 5, } ;
 	// return { props: { data, slug,attributes, content, low_brand } };
 	// return { props: { data, slug} };
 }
