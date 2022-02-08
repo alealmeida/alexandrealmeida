@@ -37,9 +37,12 @@ $topbar-height: calc(3.6em + 2vh)
 
     .main_content .bg_content,
     .page_content .bg_content
-        align-self: center
+        justify-content: center
         width: map.get($widths, "page-image-content")
         min-width: 100%
+        align-items: center
+        > div
+            display: flex !important
 
 
     .main_content .bg_content
@@ -129,8 +132,6 @@ section.job_page
         div.bg_content
             position: relative
             height: 100%
-            > div
-                display: flex !important
             .load
                 height: 100%
                 position: relative
