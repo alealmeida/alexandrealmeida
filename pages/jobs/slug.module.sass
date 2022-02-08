@@ -24,9 +24,13 @@ $topbar-height: calc(3.6em + 2vh)
 
     .main_content .bg_content,
     .page_content .bg_content
-        align-self: center
         width: map.get($m_widths, "page-image-content")
         max-width: 90vw !important
+
+    .main_content .bg_content
+        img
+            width: map.get($m_widths, "page-content") !important
+            height: auto !important
 
 		
 @media (min-width: 769px)
@@ -43,7 +47,6 @@ $topbar-height: calc(3.6em + 2vh)
         align-items: center
         > div
             display: flex !important
-
 
     .main_content .bg_content
         img
@@ -120,13 +123,13 @@ section.job_page
                         height: 100%
                         left: -1.5em
                         background-color: var(--color-grey-light)
-                > div.bg_content
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    align-items: center
-                    border-radius: 0.3em
-                    margin: 1em 0 2em
+            .bg_content
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                border-radius: 0.3em
+            padding: calc(1em + 5vh) calc(1em + 3vw)
 
     .main_content
         div.bg_content
@@ -143,7 +146,7 @@ section.job_page
     .page_content
         div.bg_content
             height: auto
-            padding: calc(1em + 5vh) calc(1em + 3vw)
+            padding: calc(1em + 5vmin)
     .header_content
         > header // hero
             margin-bottom: 6em
