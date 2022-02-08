@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, router }) => {
 			</Head>
 			<Topbar/>
 			{children}
-			<Footer/>
+			<Footer  />
 		</main>)
 		)
 }
