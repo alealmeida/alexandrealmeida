@@ -1,7 +1,16 @@
+import React, {FC} from 'react';
 import Document, {DocumentContext, Html, Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
+import Analytics from '../hooks/useGA'
 
-export default class MyDocument extends Document {
+type DocType =  {
+     styles: any[];
+     html: string;
+     head?: JSX.Element[];
+}
+
+export default class MyDocument extends Document<DocType>  {
+    static querySelectorAll: FC
     static async getInitialProps(ctx) {
         const sheet = new ServerStyleSheet()
         const originalRenderPage = ctx.renderPage
@@ -23,7 +32,9 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <Head/>
+                <Head>
+                <Analytics />
+                </Head>
                 <body>
                     <Main/>
                     <NextScript/>

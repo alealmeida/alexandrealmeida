@@ -66,58 +66,92 @@ $content-width: 1280px
             margin-left: 10em
     label
         font-family: var(--font-serif) 
-        font-size:  clamp(0.95em, 1.6vw, 1.15em ) // clamp(MIN, VAL, MAX) 
+        font-size:  clamp(0.95em, 1.6vw, 1.16em ) // clamp(MIN, VAL, MAX) 
         // font-style:  italic
         font-weight: 500
-        letter-spacing: 0.005em
+        letter-spacing: 0.002em
         // margin: 1.4em 0 0.4em
         -webkit-font-smoothing: auto
         color: var(--color-grey-darkest)
         word-spacing: 0.03em
-        line-height: 1.2em
+        line-height: 1.6em
+        padding-left: 0.1em
 
-    label:before 
-            position: relative
-            content: "  "
-            display: inline-flex
-            width: calc(0.5em + 5vmin)
-            height: 0.08em
-            margin-right: calc(0.2em + 2vmin)
-            bottom: 0.2em
-            background-color: var(--color-grey)
-    h3 
-        font-family: var(--font-kabel) 
-        font-size:  clamp(0.6em, 5vmin, 1.25em ) // clamp(MIN, VAL, MAX) 
-        font-weight: 500
-        -webkit-font-smoothing: antialiased
-        letter-spacing: -0.02em
-        // word-spacing: 0.03em
-        line-height:1.6em
-        width: fit-content
-        position: relative
-        padding-top: 0.3em
-        padding-bottom: 0.6em
-        text-decoration: underline
-        // &:after
-        //     position: absolute
-        //     content: " "
-        //     display: flex
-        //     width:  100%
-        //     height: 1px
-        //     align-self: center
-        //     justify-self: center
-        //     background-color: var(--color-grey)
-        //     margin-top: 0.065em
-        //     transition: opacity 0.2s
-        // -webkit-font-smoothing: auto
-    a
+    // label:before 
+    //         position: relative
+    //         content: "  "
+    //         display: inline-flex
+    //         width: calc(0.5em + 5vmin)
+    //         height: 0.08em
+    //         margin-right: calc(0.2em + 2vmin)
+    //         bottom: 0.2em
+    //         background-color: var(--color-grey)
+    a.link_to_pages
         color: var(--color-darkest)
-        font-size:  1.6em
         letter-spacing: 0.005em
-    h3:hover
-        text-decoration: none
+        display: flex
+        width: 100%
+        align-items: center
+        justify-content: flex-start
+        padding: 0.1em  0
+        position: relative
+        // background-image: linear-gradient( 120deg, var(--color-grey-lighter) 0%, var(--color-grey-lighter) 50%)
+        // background-size: 0% 100%
+        // background-position: 0.21em 50%
+        // background-repeat: no-repeat
+        border-radius: 0
+        transition: all .35s ease-out
+        align-self: start
+        cursor: pointer
+        h3 
+            display: flex
+            width: fit-content
+            position: relative
+            font-family: var(--font-kabel) 
+            font-size:  clamp(0.6em, 9vmin, 1.7em ) // clamp(MIN, VAL, MAX) 
+            font-weight: 500
+            -webkit-font-smoothing: antialiased
+            letter-spacing: -0.02em
+            // word-spacing: 0.03em
+            line-height:1.6em
+            background-image: linear-gradient( 120deg, var(--color-grey-dark) 0%, var(--color-grey-dark) 50%)
+            background-size: 0% 0.04em
+            background-position: 0em 100%
+            background-repeat: no-repeat
+            transition: background-size .55s ease-out
         &:after
+            content: '→'
+            position: relative
+            font-size:  clamp(0.6em, 1.6vmin, 1.8em ) 
+            display: flex
+            // background-color:  var(--color-grey-darker)
+            // width: 10px
             opacity: 0
+            padding: 0 0 0 2.5em
+            // right: 8em
+            color: var(--color-grey-darker)
+            transition: opacity 0.2s ease-in-out 0s, padding 0.25s ease-out 0s
+        &:hover
+            display: flex
+            flex-direction: row
+            align-items: center
+            align-self: start
+            // justify-content: center
+            opacity:1
+            // background-image: linear-gradient( 120deg, var(--color-white) 0%, var(--color-white) 50%)
+            // background-size: 100% 100%
+            // background-position: 0 0
+            border-radius: 0.41em
+            transition: background-size .55s ease-out
+            h3
+                background-size: calc(110% + 2.2em) 0.03em
+                transition: background-size .2s ease-out 0.2s
+            &:after
+                padding: 0 0 0 3em
+                display: flex
+                // transition: opacity 0.15s ease-in-out 0s, right 0.15s ease-in-out 0.5s
+                opacity: 1
+                transition: opacity 0.3s ease-in-out 0.35s, padding 0.35s ease-out 0.4s
     
 
 // exception 

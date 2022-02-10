@@ -9,9 +9,6 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 
 import usePosition from '../lib/usePosition';
 
-interface ref {
-    scrollSectionRef: HTMLDivElement;
-  }
 const Home = ({data, results, cloudn}) => {
 const dataLength = data.length;
 
@@ -40,7 +37,7 @@ const dataLength = data.length;
         </section>,
         data.map((job, i) => 
             <section key={2}>
-                <HighlightsJobs key={job.id} data={job} params={{results,cloudn}} />
+                <HighlightsJobs key={i} data={job} params={{results,cloudn}} />
             </section>
         ),
     ]) 
